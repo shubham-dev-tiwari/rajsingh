@@ -1,0 +1,11 @@
+{
+  "name": "Raj Singh's",
+  "short_name": "Raj Singh's",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1c1c1c",
+  "theme_color": "#1c1c1c",
+  "icons": [{ "src": "images/favicon.png", "sizes": "96x96", "type": "image/png" }]
+}

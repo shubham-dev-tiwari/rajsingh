@@ -1,0 +1,103 @@
+<title>Hero D Diptych</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Shared: hero option chrome */
+.hx-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.82); }
+.hx-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+.hx-lede { font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,.78); max-width: 46ch; font-weight: 300; }
+.hx-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn--ghost-white { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.btn--ghost-white:hover { background: #fff; color: #111; border-color: #fff; }
+.btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hx-note { background: var(--bg-soft); border-top: 1px solid var(--border-soft); padding-block: 56px; }
+.hx-note .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px 64px; }
+.hx-note h2 { font-family: var(--font-heading); font-size: 1.3rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; line-height: 1.4; }
+.hx-note .hx-tag { font-family: var(--font-heading); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+.hx-note ul { display: grid; gap: 14px; }
+.hx-note li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; font-size: .92rem; color: var(--text-2); line-height: 1.65; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
+.hx-note li b { font-family: var(--font-heading); font-weight: 400; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text); padding-top: 3px; }
+@media (max-width: 799px) { .hx-note .container { grid-template-columns: 1fr; } .hx-note li { grid-template-columns: 1fr; gap: 4px; } }
+
+.hd { display: flex; height: calc(100vh - 40px); min-height: 600px; max-height: 920px; background: #0b0b0b; color: #fff; }
+.hd__panel { position: relative; flex: 1 1 0; overflow: hidden; display: flex; align-items: flex-end; transition: flex-grow .7s var(--ease); }
+.hd__panel + .hd__panel { border-left: 1px solid rgba(255,255,255,.12); }
+@media (hover: hover) and (min-width: 1000px) { .hd:hover .hd__panel { flex-grow: .8; } .hd .hd__panel:hover { flex-grow: 1.35; } }
+.hd__panel picture { position: absolute; inset: 0; }
+.hd__panel img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.hd__panel--him img { object-position: 82% center; }
+.hd__panel--her img { object-position: 55% center; }
+@media (hover: hover) { .hd__panel:hover img { transform: scale(1.03); } }
+.hd__panel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.15) 50%, rgba(0,0,0,.35) 100%); }
+.hd__text { position: relative; z-index: 2; display: grid; gap: 16px; justify-items: start; padding: 0 clamp(20px, 4vw, 64px) clamp(32px, 7vh, 72px); max-width: 560px; }
+.hd__text .h1 { font-size: clamp(1.9rem, 3.4vw, 3.1rem); line-height: 1.15; }
+.hd__links { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .86rem; color: rgba(255,255,255,.75); }
+.hd__links a:hover { color: #fff; }
+.hd__title { position: absolute; z-index: 3; left: 50%; top: calc(var(--header-h, 100px) + 4vh); transform: translateX(-50%); text-align: center; pointer-events: none; }
+.hd__title p { font-family: var(--font-heading); font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: rgba(255,255,255,.8); white-space: nowrap; }
+.hd { position: relative; }
+@media (max-width: 999px) {
+  .hd { flex-direction: column; height: auto; max-height: none; }
+  .hd__panel { flex: none; height: 56vh; min-height: 380px; }
+  .hd__panel + .hd__panel { border-left: 0; border-top: 1px solid rgba(255,255,255,.12); }
+  .hd__panel--him { height: calc(56vh + var(--header-h, 80px)); }
+  .hd__title { display: none; }
+}
+
+</style>
+<aside class="announcement" aria-label="Announcements">
+  <button class="announcement__arrow" data-ann="-1" aria-label="Previous"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+  <div class="announcement__track"><p class="announcement__item is-active"><span class="announcement__highlight">Blake Stitched Construction</span></p><p class="announcement__item"><span class="announcement__text">Built to be resoled, not replaced</span></p><p class="announcement__item"><span class="announcement__highlight">Italian Design, Handcrafted in India</span></p></div>
+  <button class="announcement__arrow" data-ann="1" aria-label="Next"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+</aside>
+<header class="header header--transparent">
+  <div class="container header__inner">
+    <button class="header__burger" aria-label="Open menu" style="width:22px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <a class="header__logo" href="index.html"><img src="images/logo.png" alt="Raj Singh's" width="140" height="33"></a>
+    <nav class="header__nav" aria-label="Primary"><a href="collection.html">Boots</a><a href="collection.html">Lace ups</a><a href="collection.html">Loafers</a><a href="collection.html">Monk Straps</a><a href="#">Contact Us</a></nav>
+    <div class="header__actions">
+      <a href="#" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
+      <a class="header__account" href="#" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></a>
+      <a class="header__cart" href="#" aria-label="Cart" data-open="cart-drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="header__cart-count" style="display:none">0</span></a>
+    </div>
+  </div>
+</header>
+<div class="drawer drawer--right" id="cart-drawer" aria-hidden="true">
+  <div class="drawer__overlay" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__head"><p class="h6" style="font-size:.85rem">Cart</p><button data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <div class="drawer__body" id="cart-body"></div>
+    <div class="drawer__foot" id="cart-foot" hidden><a class="btn btn-atc btn--block" href="#">Checkout · <span id="cart-total"></span></a></div>
+  </div>
+</div>
+<main id="main">
+<section class="hd" aria-label="Featured">
+  <div class="hd__panel hd__panel--him">
+    <picture><source media="(max-width: 699px)" srcset="images/hero-1-mobile.png"><img src="images/hero-1.png" alt="Man pulling on black Alon jodhpur boots"></picture>
+    <div class="hd__text">
+      <p class="hx-eyebrow">For him</p>
+      <h1 class="h1">Lasting Luxury</h1>
+      <div class="hd__links"><a href="collection.html">Boots</a><a href="collection.html">Lace ups</a><a href="collection.html">Loafers</a><a href="collection.html">Monk Straps</a></div>
+      <a class="btn btn--white" href="collection.html">Shop Men’s Footwear</a>
+    </div>
+  </div>
+  <div class="hd__panel hd__panel--her">
+    <picture><source media="(max-width: 699px)" srcset="images/hero-2-mobile.png"><img src="images/hero-2.png" alt="Woman with a brown leather tote bag"></picture>
+    <div class="hd__text">
+      <p class="hx-eyebrow">For her</p>
+      <h2 class="h1">Premium Women’s Bags</h2>
+      <div class="hd__links"><span>Totes, shoulder bags and everyday carry</span></div>
+      <a class="btn btn--ghost-white" href="collection.html">Shop Women’s Bags</a>
+    </div>
+  </div>
+</section>
+<section class="hx-note" aria-label="About this option">
+  <div class="container">
+    <div><p class="hx-tag">Option D</p><h2>Diptych</h2></div>
+    <ul><li><b>Layout</b><span>Both current slides shown side by side instead of rotating. Hovering a half widens it.</span></li><li><b>Why</b><span>In the slideshow, visitors who leave within 5 seconds never see the bags slide. Here men’s footwear and women’s bags are both visible at once.</span></li><li><b>CTAs</b><span>Each half has its own clear entry: “Shop Men’s Footwear” and “Shop Women’s Bags”.</span></li><li><b>Mobile</b><span>Two stacked panels, each about half a screen tall, so both are visible within one scroll.</span></li></ul>
+  </div>
+</section>
+</main>
+<script src="main.js"></script>

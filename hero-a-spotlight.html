@@ -1,0 +1,104 @@
+<title>Hero A Spotlight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Shared: hero option chrome */
+.hx-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.82); }
+.hx-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+.hx-lede { font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,.78); max-width: 46ch; font-weight: 300; }
+.hx-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn--ghost-white { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.btn--ghost-white:hover { background: #fff; color: #111; border-color: #fff; }
+.btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hx-note { background: var(--bg-soft); border-top: 1px solid var(--border-soft); padding-block: 56px; }
+.hx-note .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px 64px; }
+.hx-note h2 { font-family: var(--font-heading); font-size: 1.3rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; line-height: 1.4; }
+.hx-note .hx-tag { font-family: var(--font-heading); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+.hx-note ul { display: grid; gap: 14px; }
+.hx-note li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; font-size: .92rem; color: var(--text-2); line-height: 1.65; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
+.hx-note li b { font-family: var(--font-heading); font-weight: 400; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text); padding-top: 3px; }
+@media (max-width: 799px) { .hx-note .container { grid-template-columns: 1fr; } .hx-note li { grid-template-columns: 1fr; gap: 4px; } }
+
+.ha { position: relative; height: calc(100vh - 40px); min-height: 620px; max-height: 920px; background: #0b0b0b; overflow: hidden; color: #fff; }
+.ha picture, .ha img { width: 100%; height: 100%; }
+.ha img { object-fit: cover; object-position: 70% 72%; animation: ha-zoom 7s ease-out both; }
+@keyframes ha-zoom { from { transform: scale(1.06); } to { transform: none; } }
+.ha::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,0) 70%), linear-gradient(0deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 30%); }
+.ha__content { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; padding-top: var(--header-h, 100px); }
+.ha__content .container { width: 100%; }
+.ha__text { display: grid; gap: 24px; justify-items: start; max-width: 640px; }
+.ha__text > * { animation: rise 1s var(--ease) both; }
+.ha__text > :nth-child(2) { animation-delay: .1s; } .ha__text > :nth-child(3) { animation-delay: .2s; } .ha__text > :nth-child(4) { animation-delay: .3s; } .ha__text > :nth-child(5) { animation-delay: .4s; }
+.ha .h1 { font-size: clamp(2.4rem, 5.4vw, 4.6rem); line-height: 1.12; }
+.ha__from { font-family: var(--font-heading); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.6); }
+.ha__from b { color: #fff; font-weight: 400; }
+.ha__trust { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; border-top: 1px solid rgba(255,255,255,.14); background: rgba(10,10,10,.35); backdrop-filter: blur(6px); }
+.ha__trust .container { display: grid; grid-template-columns: repeat(3, auto) 1fr; gap: 40px; align-items: center; padding-block: 18px; }
+.ha__trust p { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.85); }
+.ha__trust svg { width: 20px; height: 20px; flex: none; opacity: .8; }
+.ha__wearing { justify-self: end; display: inline-flex; gap: 10px; align-items: center; font-size: .82rem; color: rgba(255,255,255,.75); }
+.ha__wearing:hover { color: #fff; }
+@media (max-width: 999px) { .ha__trust .container { grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 16px; } .ha__wearing { display: none; } }
+@media (max-width: 699px) {
+  .ha { height: calc(100svh - 36px); min-height: 600px; }
+  .ha::after { background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.5) 45%, rgba(0,0,0,.1) 75%); }
+  .ha__content { align-items: flex-end; padding-bottom: 112px; }
+  .ha__text { gap: 18px; }
+  .ha .hx-ctas { width: 100%; } .ha .hx-ctas .btn { flex: 1 1 0; padding: 0 12px; }
+  .ha__trust .container { grid-template-columns: repeat(3, 1fr); gap: 8px; padding-block: 14px; }
+  .ha__trust p { flex-direction: column; text-align: center; gap: 6px; font-size: .58rem; letter-spacing: .12em; line-height: 1.4; }
+}
+
+</style>
+<aside class="announcement" aria-label="Announcements">
+  <button class="announcement__arrow" data-ann="-1" aria-label="Previous"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+  <div class="announcement__track"><p class="announcement__item is-active"><span class="announcement__highlight">Blake Stitched Construction</span></p><p class="announcement__item"><span class="announcement__text">Built to be resoled, not replaced</span></p><p class="announcement__item"><span class="announcement__highlight">Italian Design, Handcrafted in India</span></p></div>
+  <button class="announcement__arrow" data-ann="1" aria-label="Next"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+</aside>
+<header class="header header--transparent">
+  <div class="container header__inner">
+    <button class="header__burger" aria-label="Open menu" style="width:22px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <a class="header__logo" href="index.html"><img src="images/logo.png" alt="Raj Singh's" width="140" height="33"></a>
+    <nav class="header__nav" aria-label="Primary"><a href="collection.html">Boots</a><a href="collection.html">Lace ups</a><a href="collection.html">Loafers</a><a href="collection.html">Monk Straps</a><a href="#">Contact Us</a></nav>
+    <div class="header__actions">
+      <a href="#" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
+      <a class="header__account" href="#" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></a>
+      <a class="header__cart" href="#" aria-label="Cart" data-open="cart-drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="header__cart-count" style="display:none">0</span></a>
+    </div>
+  </div>
+</header>
+<div class="drawer drawer--right" id="cart-drawer" aria-hidden="true">
+  <div class="drawer__overlay" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__head"><p class="h6" style="font-size:.85rem">Cart</p><button data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <div class="drawer__body" id="cart-body"></div>
+    <div class="drawer__foot" id="cart-foot" hidden><a class="btn btn-atc btn--block" href="#">Checkout · <span id="cart-total"></span></a></div>
+  </div>
+</div>
+<main id="main">
+<section class="ha" aria-label="Featured">
+  <picture><source media="(max-width: 699px)" srcset="images/hero-1-mobile.png"><img src="images/hero-1.png" alt="Man pulling on black Alon jodhpur boots"></picture>
+  <div class="ha__content"><div class="container"><div class="ha__text">
+    <p class="hx-eyebrow">Blake-stitched · Full-grain leather</p>
+    <h1 class="h1">Lasting<br>Luxury</h1>
+    <p class="hx-lede">Jodhpurs, Chelsea boots and loafers cut to Italian patterns and finished by hand in India. Made to be resoled, not replaced.</p>
+    <div class="hx-ctas"><a class="btn btn--white" href="collection.html">Shop Boots</a><a class="btn btn--ghost-white" href="collection.html">Shop Loafers</a></div>
+    <p class="ha__from">Handcrafted pairs from <b>Rs. 5,499</b></p>
+  </div></div></div>
+  <div class="ha__trust"><div class="container">
+    <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12h18" stroke-dasharray="2.5 2.5"/><path d="M3 7c6 3 12 3 18 0M3 17c6-3 12-3 18 0"/></svg>Blake stitched</p>
+    <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>Resoleable for years</p>
+    <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Handmade in India</p>
+    <a class="ha__wearing" href="product.html">In this shot: Alon Jodhpur Boots <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h10M7 2l4 4-4 4"/></svg></a>
+  </div></div>
+</section>
+<section class="hx-note" aria-label="About this option">
+  <div class="container">
+    <div><p class="hx-tag">Option A</p><h2>Spotlight</h2></div>
+    <ul><li><b>Layout</b><span>Single full-bleed shot of the Alon jodhpurs. No slideshow, so every visitor sees the same message.</span></li><li><b>Copy</b><span>Keeps “Lasting Luxury” and adds one line on what you sell, how it is made, and a price anchor from Rs. 5,499.</span></li><li><b>CTAs</b><span>Two category CTAs (Boots, Loafers) instead of a generic Shop Now, so the first click already filters.</span></li><li><b>Trust</b><span>Construction proof points from the announcement bar sit under the fold line of the image.</span></li></ul>
+  </div>
+</section>
+</main>
+<script src="main.js"></script>

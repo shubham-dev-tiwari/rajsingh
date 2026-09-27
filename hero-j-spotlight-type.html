@@ -1,0 +1,228 @@
+<title>Hero J Oxford Spotlight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Shared: hero option chrome */
+.hx-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.82); }
+.hx-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+.hx-lede { font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,.78); max-width: 46ch; font-weight: 300; }
+.hx-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn--ghost-white { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.btn--ghost-white:hover { background: #fff; color: #111; border-color: #fff; }
+.btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hx-note { background: var(--bg-soft); border-top: 1px solid var(--border-soft); padding-block: 56px; }
+.hx-note .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px 64px; }
+.hx-note h2 { font-family: var(--font-heading); font-size: 1.3rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; line-height: 1.4; }
+.hx-note .hx-tag { font-family: var(--font-heading); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+.hx-note ul { display: grid; gap: 14px; }
+.hx-note li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; font-size: .92rem; color: var(--text-2); line-height: 1.65; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
+.hx-note li b { font-family: var(--font-heading); font-weight: 400; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text); padding-top: 3px; }
+@media (max-width: 799px) { .hx-note .container { grid-template-columns: 1fr; } .hx-note li { grid-template-columns: 1fr; gap: 4px; } }
+
+.ox-stage { position: relative; aspect-ratio: 4 / 3; max-width: 100%; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; outline: none; }
+.ox-stage.is-grabbing { cursor: grabbing; }
+.ox-stage::before { content: ""; position: absolute; left: 12%; right: 12%; bottom: 14%; height: 22%; border-radius: 50%; background: radial-gradient(closest-side, rgba(214,170,120,.16), rgba(214,170,120,0)); filter: blur(6px); }
+.ox-frame { position: relative; width: 100%; height: 100%; object-fit: contain; pointer-events: none; transition: opacity .18s ease, filter .18s ease; -webkit-user-drag: none; }
+.ox-stage.is-swapping .ox-frame { opacity: .25; filter: blur(3px); }
+.ox-stage:focus-visible { outline: 1px solid rgba(255,255,255,.4); outline-offset: 6px; border-radius: 12px; }
+.ox-swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+.ox-swatch { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 6px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: .78rem; color: rgba(255,255,255,.72); transition: border-color .3s ease, color .3s ease, background .3s ease; }
+.ox-swatch i { width: 24px; height: 24px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255,255,255,.25), inset 0 -6px 10px rgba(0,0,0,.35), inset 0 4px 8px rgba(255,255,255,.12); }
+.ox-swatch:hover { border-color: rgba(255,255,255,.4); color: #fff; }
+.ox-swatch[aria-pressed="true"] { border-color: rgba(214,170,120,.8); color: #fff; background: rgba(214,170,120,.08); }
+.ox-meta { display: flex; align-items: center; gap: 14px; font-family: var(--font-heading); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.5); font-variant-numeric: tabular-nums; }
+.ox-meta b { color: rgba(214,170,120,.95); font-weight: 400; }
+.ox-meta svg { width: 18px; height: 18px; }
+
+.hj { --mx: 60%; --my: 55%; position: relative; overflow: hidden; color: #fff; height: min(calc(100vh - 40px), 920px); min-height: 600px;
+  background: radial-gradient(38% 50% at var(--mx) var(--my), rgba(255,236,210,.13), rgba(255,236,210,0) 70%), radial-gradient(80% 80% at 50% 60%, #1b1816, #0a0908 80%); }
+.hj__word { position: absolute; left: 50%; top: 53%; transform: translate(-50%, -50%); margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(5rem, 16.5vw, 17rem); letter-spacing: .04em; line-height: 1; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px rgba(214,170,120,.35); background: linear-gradient(180deg, rgba(214,170,120,.22), rgba(214,170,120,0) 85%); -webkit-background-clip: text; background-clip: text; user-select: none; }
+.hj .ox-stage { position: absolute; left: 50%; top: 56%; transform: translate(-50%, -50%); width: min(78vw, 1000px); cursor: ew-resize; }
+.hj .ox-stage::before { background: radial-gradient(closest-side, rgba(255,230,200,.18), rgba(255,230,200,0)); }
+.hj__top { position: absolute; left: 0; right: 0; top: calc(var(--header-h, 100px) + 2vh); z-index: 2; }
+.hj__top .container { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.hj__bottom { position: absolute; left: 0; right: 0; bottom: 36px; z-index: 2; }
+.hj__bottom .container { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.hj__line { font-family: var(--font-heading); font-size: clamp(1rem, 1.5vw, 1.35rem); letter-spacing: .16em; text-transform: uppercase; line-height: 1.5; max-width: 22ch; }
+.hj__line em { font-style: normal; color: rgba(214,170,120,.95); }
+.hj__side { display: grid; gap: 14px; justify-items: end; text-align: right; }
+.hj__side p { font-size: .82rem; color: rgba(255,255,255,.6); max-width: 30ch; }
+.hj .ox-swatches { justify-content: flex-end; }
+@media (max-width: 799px) {
+  .hj { height: auto; min-height: 0; display: grid; padding-top: calc(var(--header-h, 80px) + 16px); padding-bottom: 28px; gap: 12px; }
+  .hj__top, .hj__bottom { position: static; }
+  .hj__top .container, .hj__bottom .container { flex-direction: column; align-items: flex-start; }
+  .hj__word { top: 36%; font-size: 30vw; }
+  .hj .ox-stage { position: relative; left: auto; top: auto; transform: none; width: 100%; }
+  .hj__side { justify-items: start; text-align: left; } .hj .ox-swatches { justify-content: flex-start; }
+}
+
+</style>
+<aside class="announcement" aria-label="Announcements">
+  <button class="announcement__arrow" data-ann="-1" aria-label="Previous"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+  <div class="announcement__track"><p class="announcement__item is-active"><span class="announcement__highlight">Blake Stitched Construction</span></p><p class="announcement__item"><span class="announcement__text">Built to be resoled, not replaced</span></p><p class="announcement__item"><span class="announcement__highlight">Italian Design, Handcrafted in India</span></p></div>
+  <button class="announcement__arrow" data-ann="1" aria-label="Next"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+</aside>
+<header class="header header--transparent">
+  <div class="container header__inner">
+    <button class="header__burger" aria-label="Open menu" style="width:22px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <a class="header__logo" href="index.html"><img src="images/logo.png" alt="Raj Singh's" width="140" height="33"></a>
+    <nav class="header__nav" aria-label="Primary"><a href="collection.html">Boots</a><a href="collection.html">Lace ups</a><a href="collection.html">Loafers</a><a href="collection.html">Monk Straps</a><a href="#">Contact Us</a></nav>
+    <div class="header__actions">
+      <a href="#" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
+      <a class="header__account" href="#" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></a>
+      <a class="header__cart" href="#" aria-label="Cart" data-open="cart-drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="header__cart-count" style="display:none">0</span></a>
+    </div>
+  </div>
+</header>
+<div class="drawer drawer--right" id="cart-drawer" aria-hidden="true">
+  <div class="drawer__overlay" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__head"><p class="h6" style="font-size:.85rem">Cart</p><button data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <div class="drawer__body" id="cart-body"></div>
+    <div class="drawer__foot" id="cart-foot" hidden><a class="btn btn-atc btn--block" href="#">Checkout · <span id="cart-total"></span></a></div>
+  </div>
+</div>
+<main id="main">
+<section class="hj" aria-label="Featured: The Oxford">
+  <p class="hj__word" aria-hidden="true">OXFORD</p>
+  <div class="hj__top"><div class="container">
+    <p class="hx-eyebrow">Raj Singh’s · Lace ups</p>
+    <p class="ox-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12a8 8 0 0 1 14.5-4.6M20 12a8 8 0 0 1-14.5 4.6"/><path d="M18.5 3v4.4h-4.4M5.5 21v-4.4h4.4"/></svg><b data-ox-deg>000°</b> / 360°</p>
+  </div></div>
+  <div class="ox-stage" tabindex="0" role="img" aria-label="Cap-toe oxford. Move the pointer, swipe or use arrow keys to rotate.">
+    <img class="ox-frame" src="360-a/black-00.webp" alt="" width="1200" height="900" draggable="false">
+  </div>
+  <div class="hj__bottom"><div class="container">
+    <div style="display:grid;gap:18px;justify-items:start">
+      <h1 class="hj__line">The cap-toe Oxford. <em>Hand-burnished.</em> Blake stitched.</h1>
+      <a class="btn btn--white" href="collection.html">Shop Oxfords · Rs. 5,499</a>
+    </div>
+    <div class="hj__side">
+      <p>Move across the stage to turn the pair. Full-grain calf, finished by hand in India.</p>
+      <div class="ox-swatches" role="group" aria-label="Leather colour"><button type="button" class="ox-swatch" data-leather="black" aria-pressed="true" aria-label="Black leather"><i style="background:#141312"></i><span>Black</span></button><button type="button" class="ox-swatch" data-leather="oxblood" aria-pressed="false" aria-label="Oxblood leather"><i style="background:#4a1512"></i><span>Oxblood</span></button><button type="button" class="ox-swatch" data-leather="tan" aria-pressed="false" aria-label="Walnut leather"><i style="background:#7a5536"></i><span>Walnut</span></button><button type="button" class="ox-swatch" data-leather="espresso" aria-pressed="false" aria-label="Espresso leather"><i style="background:#3a2a22"></i><span>Espresso</span></button></div>
+    </div>
+  </div></div>
+</section>
+
+<script>
+(function () {
+  var FRAMES = 36;
+  var src = function (c, i) { return ((c === 'black' || c === 'oxblood') ? '360-a/' : '360-b/') + c + '-' + (i < 10 ? '0' : '') + i + '.webp'; };
+  var cache = {};
+  function preload(c) {
+    if (cache[c]) return;
+    cache[c] = [];
+    for (var i = 0; i < FRAMES; i++) { var im = new Image(); im.decoding = 'async'; im.src = src(c, i); cache[c].push(im); }
+  }
+  window.OxSpin = function (stage, opts) {
+    opts = opts || {};
+    var img = stage.querySelector('.ox-frame');
+    var readout = document.querySelectorAll('[data-ox-deg]');
+    var leather = 'black', idx = opts.start || 0, listeners = [];
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    preload(leather);
+    function show(i) {
+      idx = ((Math.round(i) % FRAMES) + FRAMES) % FRAMES;
+      img.src = src(leather, idx);
+      readout.forEach(function (r) { r.textContent = String(idx * 10).padStart(3, '0') + '\u00b0'; });
+      listeners.forEach(function (f) { f(idx); });
+    }
+    function setLeather(c) {
+      if (c === leather) return;
+      preload(c);
+      stage.classList.add('is-swapping');
+      var sec = stage.closest('section'); if (sec) sec.dataset.leather = c;
+      setTimeout(function () { leather = c; show(idx); stage.classList.remove('is-swapping'); }, 180);
+    }
+    document.querySelectorAll('.ox-swatch').forEach(function (b) {
+      b.addEventListener('pointerenter', function () { preload(b.dataset.leather); });
+      b.addEventListener('click', function () {
+        document.querySelectorAll('.ox-swatch').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        document.querySelectorAll('[data-ox-leather-name]').forEach(function (n) { n.textContent = b.querySelector('span').textContent; });
+        setLeather(b.dataset.leather);
+      });
+    });
+    // idle preload of the other leathers so swatches feel instant
+    setTimeout(function () { ['oxblood', 'tan', 'espresso'].forEach(preload); }, 2500);
+
+    var api = { get dragging() { return dragging; }, setLeather: setLeather, get leather() { return leather; }, stage: stage, show: show, get index() { return idx; }, onChange: function (f) { listeners.push(f); } };
+    if (opts.scrollDriven) return api;
+
+    // drag + inertia
+    var autoOK = !reduce && opts.auto !== false;
+    var dragging = false, lastX = 0, acc = 0, vel = 0, raf = 0, idleT = 0, auto = autoOK, autoT = 0;
+    function stopAuto(ms) { auto = false; clearTimeout(idleT); idleT = setTimeout(function () { auto = autoOK; }, typeof ms === 'number' ? ms : 5000); }
+    stage.addEventListener('pointerdown', function (e) {
+      dragging = true; lastX = e.clientX; vel = 0; stopAuto();
+      stage.setPointerCapture(e.pointerId); stage.classList.add('is-grabbing');
+    });
+    stage.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - lastX; lastX = e.clientX;
+      vel = dx; acc += dx;
+      var step = 14;
+      while (Math.abs(acc) >= step) { show(idx - Math.sign(acc)); acc -= Math.sign(acc) * step; }
+    });
+    function end() {
+      if (!dragging) return;
+      dragging = false; stage.classList.remove('is-grabbing');
+      cancelAnimationFrame(raf);
+      var v = vel * 1.1, a = 0;
+      (function glide() {
+        v *= 0.92; a += v;
+        while (Math.abs(a) >= 14) { show(idx - Math.sign(a)); a -= Math.sign(a) * 14; }
+        if (Math.abs(v) > 0.4) raf = requestAnimationFrame(glide);
+      })();
+    }
+    stage.addEventListener('pointerup', end);
+    stage.addEventListener('pointercancel', end);
+    stage.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { show(idx + 1); stopAuto(); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { show(idx - 1); stopAuto(); e.preventDefault(); }
+    });
+    (function tick(t) {
+      if (auto && !dragging && t - autoT > 120) { autoT = t; show(idx - 1); }
+      requestAnimationFrame(tick);
+    })(0);
+    api.pause = stopAuto;
+    return api;
+  };
+})();
+</script>
+
+<script>
+(function () {
+  var sec = document.querySelector('.hj');
+  var spin = OxSpin(sec.querySelector('.ox-stage'), { auto: true });
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  var raf = 0, target = null;
+  sec.addEventListener('pointermove', function (e) {
+    var r = sec.getBoundingClientRect();
+    var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+    sec.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+    sec.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+    if (e.target.closest('a, button')) return;
+    target = Math.round(px * 35);
+    spin.pause(3000);
+    if (!raf) raf = requestAnimationFrame(function step() {
+      raf = 0;
+      if (target === null || target === spin.index) return;
+      var d = ((target - spin.index + 54) % 36) - 18;
+      spin.show(spin.index + Math.sign(d));
+      raf = requestAnimationFrame(step);
+    });
+  });
+})();
+</script>
+<section class="hx-note" aria-label="About this option">
+  <div class="container">
+    <div><p class="hx-tag">Option J · 3D</p><h2>Spotlight & Type</h2></div>
+    <ul><li><b>Look</b><span>Editorial and poster-like. A giant OXFORD wordmark sits behind the shoe for depth, and a soft spotlight follows the cursor across the stage.</span></li><li><b>Interaction</b><span>On desktop, moving the mouse left and right turns the shoe, with no click needed. On phones, swipe to turn.</span></li><li><b>Why</b><span>It is the most ‘brand campaign’ of the set. Use it if the homepage is meant to set tone and the category carousels below do the selling.</span></li><li><b>Watch</b><span>It has the fewest words above the fold. Pair it with a strong first carousel.</span></li></ul>
+  </div>
+</section>
+</main>
+<script src="main.js"></script>

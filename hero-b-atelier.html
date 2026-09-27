@@ -1,0 +1,110 @@
+<title>Hero B Atelier Split</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Shared: hero option chrome */
+.hx-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.82); }
+.hx-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+.hx-lede { font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,.78); max-width: 46ch; font-weight: 300; }
+.hx-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn--ghost-white { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.btn--ghost-white:hover { background: #fff; color: #111; border-color: #fff; }
+.btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hx-note { background: var(--bg-soft); border-top: 1px solid var(--border-soft); padding-block: 56px; }
+.hx-note .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px 64px; }
+.hx-note h2 { font-family: var(--font-heading); font-size: 1.3rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; line-height: 1.4; }
+.hx-note .hx-tag { font-family: var(--font-heading); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+.hx-note ul { display: grid; gap: 14px; }
+.hx-note li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; font-size: .92rem; color: var(--text-2); line-height: 1.65; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
+.hx-note li b { font-family: var(--font-heading); font-weight: 400; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text); padding-top: 3px; }
+@media (max-width: 799px) { .hx-note .container { grid-template-columns: 1fr; } .hx-note li { grid-template-columns: 1fr; gap: 4px; } }
+
+.hb { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); min-height: min(calc(100vh - 40px), 900px); background: #141414; color: #fff; }
+.header--transparent { background: #141414; }
+.hb__panel { position: relative; display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: calc(var(--header-h, 100px) + 24px) clamp(24px, 4vw, 72px) 48px max(var(--gutter), 50vw - var(--container) / 2 + var(--gutter));
+  background: linear-gradient(to bottom, rgba(255,255,255,.05), rgba(0,0,0,.35)), linear-gradient(135deg, #0f0f0f 0%, #1c1c1c 35%, #262626 55%, #1a1a1a 80%, #0f0f0f 100%); }
+.hb__intro { display: grid; gap: 22px; justify-items: start; }
+.hb .h1 { font-size: clamp(2rem, 3.4vw, 3.2rem); line-height: 1.12; }
+.hb__intro { gap: 18px; }
+.hb__cats { display: grid; border-top: 1px solid rgba(255,255,255,.12); }
+.hb__cat { display: grid; grid-template-columns: 52px 1fr auto; gap: 16px; align-items: center; padding-block: 9px; border-bottom: 1px solid rgba(255,255,255,.12); transition: padding .35s var(--ease), background .3s ease; }
+.hb__cat img { width: 52px; height: 52px; object-fit: cover; border-radius: 8px; filter: saturate(.9); }
+.hb__cat span { font-family: var(--font-heading); font-size: .82rem; letter-spacing: .2em; text-transform: uppercase; }
+.hb__cat small { display: block; font-family: var(--font-body); font-size: .78rem; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.55); margin-top: 2px; }
+.hb__cat svg { opacity: .5; transition: transform .35s var(--ease), opacity .3s; }
+@media (hover: hover) { .hb__cat:hover { padding-left: 10px; } .hb__cat:hover svg { opacity: 1; transform: translateX(4px); } }
+.hb__media { position: relative; overflow: hidden; }
+.hb__media picture, .hb__media img { width: 100%; height: 100%; }
+.hb__media img { object-fit: cover; object-position: 80% 60%; }
+.hb__caption { position: absolute; right: 24px; bottom: 24px; display: inline-flex; gap: 10px; align-items: center; padding: 10px 16px; background: rgba(12,12,12,.6); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.15); border-radius: 999px; font-size: .8rem; }
+@media (max-width: 999px) {
+  .hb { grid-template-columns: 1fr; min-height: 0; }
+  .hb__media { order: -1; height: 62vh; min-height: 420px; }
+  .header--transparent { background: transparent; }
+  .hb__panel { padding: 40px var(--gutter) 48px; gap: 32px; }
+}
+@media (max-width: 699px) {
+  .hb__cats { grid-template-columns: 1fr 1fr; gap: 10px; border: 0; }
+  .hb__cat { grid-template-columns: 1fr; gap: 10px; padding: 10px; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; }
+  .hb__cat img { width: 100%; height: auto; aspect-ratio: 4/3; }
+  .hb__cat svg, .hb__cat small { display: none; }
+  .hb__cat span { font-size: .7rem; }
+  .hb__caption { display: none; }
+}
+
+</style>
+<aside class="announcement" aria-label="Announcements">
+  <button class="announcement__arrow" data-ann="-1" aria-label="Previous"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+  <div class="announcement__track"><p class="announcement__item is-active"><span class="announcement__highlight">Blake Stitched Construction</span></p><p class="announcement__item"><span class="announcement__text">Built to be resoled, not replaced</span></p><p class="announcement__item"><span class="announcement__highlight">Italian Design, Handcrafted in India</span></p></div>
+  <button class="announcement__arrow" data-ann="1" aria-label="Next"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+</aside>
+<header class="header header--transparent">
+  <div class="container header__inner">
+    <button class="header__burger" aria-label="Open menu" style="width:22px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <a class="header__logo" href="index.html"><img src="images/logo.png" alt="Raj Singh's" width="140" height="33"></a>
+    <nav class="header__nav" aria-label="Primary"><a href="collection.html">Boots</a><a href="collection.html">Lace ups</a><a href="collection.html">Loafers</a><a href="collection.html">Monk Straps</a><a href="#">Contact Us</a></nav>
+    <div class="header__actions">
+      <a href="#" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
+      <a class="header__account" href="#" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></a>
+      <a class="header__cart" href="#" aria-label="Cart" data-open="cart-drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="header__cart-count" style="display:none">0</span></a>
+    </div>
+  </div>
+</header>
+<div class="drawer drawer--right" id="cart-drawer" aria-hidden="true">
+  <div class="drawer__overlay" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__head"><p class="h6" style="font-size:.85rem">Cart</p><button data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <div class="drawer__body" id="cart-body"></div>
+    <div class="drawer__foot" id="cart-foot" hidden><a class="btn btn-atc btn--block" href="#">Checkout · <span id="cart-total"></span></a></div>
+  </div>
+</div>
+<main id="main">
+<section class="hb" aria-label="Featured">
+  <div class="hb__panel">
+    <div class="hb__intro">
+      <p class="hx-eyebrow">Italian design · Handcrafted in India</p>
+      <h1 class="h1">Step Into<br>Lasting Luxury</h1>
+      <p class="hx-lede">Full-grain leather, Blake stitched and finished by hand. Built to be resoled, not replaced.</p>
+    </div>
+    <nav class="hb__cats" aria-label="Shop by category">
+      <a class="hb__cat" href="collection.html"><img src="images/boot-alon-1.jpg" alt=""><span>Boots<small>Jodhpur &amp; Chelsea</small></span><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h10M7 2l4 4-4 4"/></svg></a>
+      <a class="hb__cat" href="collection.html"><img src="images/cat-laceups.jpg" alt=""><span>Lace ups<small>Oxfords &amp; derbies</small></span><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h10M7 2l4 4-4 4"/></svg></a>
+      <a class="hb__cat" href="collection.html"><img src="images/loafer-valentino-burg-1.jpg" alt=""><span>Loafers<small>Penny, college &amp; horsebit</small></span><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h10M7 2l4 4-4 4"/></svg></a>
+      <a class="hb__cat" href="collection.html"><img src="images/cat-monk.jpg" alt=""><span>Monk Straps<small>Single &amp; double</small></span><svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h10M7 2l4 4-4 4"/></svg></a>
+    </nav>
+  </div>
+  <div class="hb__media">
+    <picture><source media="(max-width: 699px)" srcset="images/hero-1-mobile.png"><img src="images/hero-1.png" alt="Man pulling on black Alon jodhpur boots"></picture>
+    <a class="hb__caption" href="product.html">Alon Jodhpur Boots · Rs. 5,999 <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h10M7 2l4 4-4 4"/></svg></a>
+  </div>
+</section>
+<section class="hx-note" aria-label="About this option">
+  <div class="container">
+    <div><p class="hx-tag">Option B</p><h2>Atelier Split</h2></div>
+    <ul><li><b>Layout</b><span>Split screen. Leather-black panel on the left carries the message; the photograph gets the right 58% without any text over it.</span></li><li><b>Navigation</b><span>The four categories from your menu appear as image rows inside the hero. Visitors can start browsing without opening the menu.</span></li><li><b>Mobile</b><span>Photo first, then headline and the category rows stacked below as a 2×2 grid.</span></li><li><b>Best for</b><span>Stores where most visitors arrive knowing the style they want (boots vs loafers).</span></li></ul>
+  </div>
+</section>
+</main>
+<script src="main.js"></script>

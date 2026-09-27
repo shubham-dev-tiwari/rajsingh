@@ -1,0 +1,207 @@
+<title>Hero G Live 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Shared: hero option chrome */
+.hx-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.82); }
+.hx-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+.hx-lede { font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,.78); max-width: 46ch; font-weight: 300; }
+.hx-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn--ghost-white { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.btn--ghost-white:hover { background: #fff; color: #111; border-color: #fff; }
+.btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hx-note { background: var(--bg-soft); border-top: 1px solid var(--border-soft); padding-block: 56px; }
+.hx-note .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px 64px; }
+.hx-note h2 { font-family: var(--font-heading); font-size: 1.3rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; line-height: 1.4; }
+.hx-note .hx-tag { font-family: var(--font-heading); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+.hx-note ul { display: grid; gap: 14px; }
+.hx-note li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; font-size: .92rem; color: var(--text-2); line-height: 1.65; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
+.hx-note li b { font-family: var(--font-heading); font-weight: 400; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text); padding-top: 3px; }
+@media (max-width: 799px) { .hx-note .container { grid-template-columns: 1fr; } .hx-note li { grid-template-columns: 1fr; gap: 4px; } }
+
+.ox-stage { position: relative; aspect-ratio: 4 / 3; max-width: 100%; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; outline: none; }
+.ox-stage.is-grabbing { cursor: grabbing; }
+.ox-stage::before { content: ""; position: absolute; left: 12%; right: 12%; bottom: 14%; height: 22%; border-radius: 50%; background: radial-gradient(closest-side, rgba(214,170,120,.16), rgba(214,170,120,0)); filter: blur(6px); }
+.ox-frame { position: relative; width: 100%; height: 100%; object-fit: contain; pointer-events: none; transition: opacity .18s ease, filter .18s ease; -webkit-user-drag: none; }
+.ox-stage.is-swapping .ox-frame { opacity: .25; filter: blur(3px); }
+.ox-stage:focus-visible { outline: 1px solid rgba(255,255,255,.4); outline-offset: 6px; border-radius: 12px; }
+.ox-swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+.ox-swatch { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 6px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: .78rem; color: rgba(255,255,255,.72); transition: border-color .3s ease, color .3s ease, background .3s ease; }
+.ox-swatch i { width: 24px; height: 24px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255,255,255,.25), inset 0 -6px 10px rgba(0,0,0,.35), inset 0 4px 8px rgba(255,255,255,.12); }
+.ox-swatch:hover { border-color: rgba(255,255,255,.4); color: #fff; }
+.ox-swatch[aria-pressed="true"] { border-color: rgba(214,170,120,.8); color: #fff; background: rgba(214,170,120,.08); }
+.ox-meta { display: flex; align-items: center; gap: 14px; font-family: var(--font-heading); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.5); font-variant-numeric: tabular-nums; }
+.ox-meta b { color: rgba(214,170,120,.95); font-weight: 400; }
+.ox-meta svg { width: 18px; height: 18px; }
+
+.he { position: relative; min-height: min(calc(100vh - 40px), 940px); color: #fff; overflow: hidden;
+  background: radial-gradient(60% 70% at 68% 55%, #2a2521 0%, #171513 45%, #0c0b0a 100%); }
+.he::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E"); }
+.he__grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: 24px; min-height: inherit; padding-top: var(--header-h, 100px); padding-bottom: 40px; }
+.he__copy { display: grid; gap: 24px; justify-items: start; }
+.he .h1 { font-size: clamp(2.1rem, 3.5vw, 3.3rem); line-height: 1.12; }
+.he .h1 em { font-style: normal; color: rgba(214,170,120,.95); }
+.he__price { font-family: var(--font-heading); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.he__price b { color: #fff; font-weight: 400; }
+.he__pick { display: grid; gap: 12px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.1); width: 100%; max-width: 460px; }
+.he__pick p { font-family: var(--font-heading); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.5); padding-top: 14px; }
+.he__pick p b { color: #fff; font-weight: 400; }
+.he__viewer { position: relative; display: grid; gap: 8px; }
+.he__viewer .ox-stage { width: 100%; margin-inline: auto; }
+.he__bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-inline: 4%; }
+.he__stops { display: flex; flex-wrap: wrap; gap: 6px; }
+.he__stops button { font-family: var(--font-heading); font-size: .64rem; letter-spacing: .18em; text-transform: uppercase; padding: 9px 12px; border-radius: 999px; color: rgba(255,255,255,.6); border: 1px solid transparent; transition: color .3s, border-color .3s; }
+.he__stops button:hover { color: #fff; }
+.he__stops button[aria-pressed="true"] { color: #fff; border-color: rgba(255,255,255,.25); }
+.he__note { position: absolute; top: 4%; left: 4%; max-width: 250px; padding: 16px 18px; border-radius: 14px; background: rgba(20,18,16,.72); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.1); display: grid; gap: 6px; transition: opacity .35s ease, transform .45s var(--ease); }
+.he__note[data-hidden="true"] { opacity: 0; transform: translateY(8px); pointer-events: none; }
+.he__note b { font-family: var(--font-heading); font-weight: 400; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(214,170,120,.95); }
+.he__note span { font-size: .86rem; line-height: 1.6; color: rgba(255,255,255,.8); }
+.he__hint { position: absolute; left: 50%; bottom: 17%; transform: translateX(-50%); display: inline-flex; gap: 8px; align-items: center; font-size: .72rem; letter-spacing: .08em; color: rgba(255,255,255,.6); pointer-events: none; transition: opacity .5s; }
+.he__hint svg { width: 16px; height: 16px; }
+.he__viewer.touched .he__hint { opacity: 0; }
+.he__copy > * { animation: rise 1s var(--ease) both; }
+.he__copy > :nth-child(2) { animation-delay: .08s; } .he__copy > :nth-child(3) { animation-delay: .16s; } .he__copy > :nth-child(4) { animation-delay: .24s; } .he__copy > :nth-child(5) { animation-delay: .32s; }
+@media (max-width: 999px) {
+  .he__grid { grid-template-columns: 1fr; padding-top: calc(var(--header-h, 80px) + 8px); gap: 8px; }
+  .he__viewer { order: -1; }
+  .he__note { position: static; max-width: none; margin-inline: 4%; }
+  .he__note[data-hidden="true"] { display: none; }
+  .he__hint { bottom: 12%; }
+}
+@media (max-width: 699px) {
+  .he .hx-ctas { width: 100%; } .he .hx-ctas .btn { flex: 1 1 0; padding: 0 12px; }
+  .he__stops button { padding: 8px 10px; font-size: .6rem; }
+}
+
+.he__viewer .ox-stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity .8s ease; }
+.he__viewer.is-live .ox-stage iframe { opacity: 1; }
+.ox-poster { position: absolute; inset: 0; transition: opacity .8s ease; }
+.he__viewer.is-live .ox-poster { opacity: 0; }
+.he__viewer .ox-stage { cursor: auto; }
+.he__viewer .ox-stage::before { display: none; }
+
+</style>
+<aside class="announcement" aria-label="Announcements">
+  <button class="announcement__arrow" data-ann="-1" aria-label="Previous"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+  <div class="announcement__track"><p class="announcement__item is-active"><span class="announcement__highlight">Blake Stitched Construction</span></p><p class="announcement__item"><span class="announcement__text">Built to be resoled, not replaced</span></p><p class="announcement__item"><span class="announcement__highlight">Italian Design, Handcrafted in India</span></p></div>
+  <button class="announcement__arrow" data-ann="1" aria-label="Next"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+</aside>
+<header class="header header--transparent">
+  <div class="container header__inner">
+    <button class="header__burger" aria-label="Open menu" style="width:22px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <a class="header__logo" href="index.html"><img src="images/logo.png" alt="Raj Singh's" width="140" height="33"></a>
+    <nav class="header__nav" aria-label="Primary"><a href="collection.html">Boots</a><a href="collection.html">Lace ups</a><a href="collection.html">Loafers</a><a href="collection.html">Monk Straps</a><a href="#">Contact Us</a></nav>
+    <div class="header__actions">
+      <a href="#" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
+      <a class="header__account" href="#" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></a>
+      <a class="header__cart" href="#" aria-label="Cart" data-open="cart-drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="header__cart-count" style="display:none">0</span></a>
+    </div>
+  </div>
+</header>
+<div class="drawer drawer--right" id="cart-drawer" aria-hidden="true">
+  <div class="drawer__overlay" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__head"><p class="h6" style="font-size:.85rem">Cart</p><button data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <div class="drawer__body" id="cart-body"></div>
+    <div class="drawer__foot" id="cart-foot" hidden><a class="btn btn-atc btn--block" href="#">Checkout · <span id="cart-total"></span></a></div>
+  </div>
+</div>
+<main id="main">
+<section class="he" aria-label="Featured: The Oxford in 360 degrees">
+  <div class="container he__grid">
+    <div class="he__copy">
+      <p class="hx-eyebrow">The Cap-Toe Oxford</p>
+      <h1 class="h1">Turn it over.<br><em>Every angle</em> is finished.</h1>
+      <p class="hx-lede">Full-grain calf, closed lacing and a Blake-stitched leather sole, burnished by hand in India. Spin it and look for a shortcut. You won’t find one.</p>
+      <div class="hx-ctas"><a class="btn btn--white" href="collection.html">Shop Oxfords</a><a class="btn btn--ghost-white" href="collection.html">All Lace ups</a></div>
+      <div class="he__pick">
+        <p>Leather · <b data-ox-leather-name>Black</b></p>
+        <div class="ox-swatches" role="group" aria-label="Leather colour"><button type="button" class="ox-swatch" data-leather="black" aria-pressed="true" aria-label="Black leather"><i style="background:#141312"></i><span>Black</span></button><button type="button" class="ox-swatch" data-leather="oxblood" aria-pressed="false" aria-label="Oxblood leather"><i style="background:#4a1512"></i><span>Oxblood</span></button><button type="button" class="ox-swatch" data-leather="tan" aria-pressed="false" aria-label="Walnut leather"><i style="background:#7a5536"></i><span>Walnut</span></button><button type="button" class="ox-swatch" data-leather="espresso" aria-pressed="false" aria-label="Espresso leather"><i style="background:#3a2a22"></i><span>Espresso</span></button></div>
+        <p class="he__price">Handcrafted from <b>Rs. 5,499</b></p>
+      </div>
+    </div>
+    <div class="he__viewer">
+      <div class="ox-stage" tabindex="0" aria-label="Interactive 3D oxford">
+        <img class="ox-frame ox-poster" src="360-a/black-00.webp" alt="" width="1200" height="900"><iframe id="sf" title="Cap-toe oxford, interactive 3D model" allow="autoplay; fullscreen; xr-spatial-tracking"></iframe>
+        <span class="he__hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12a8 8 0 0 1 14.5-4.6M20 12a8 8 0 0 1-14.5 4.6"/><path d="M18.5 3v4.4h-4.4M5.5 21v-4.4h4.4"/></svg> Drag to rotate</span>
+      </div>
+      <div class="he__note" data-hidden="true" aria-live="polite"><b></b><span></span></div>
+      <div class="he__bar">
+        <div class="he__stops" role="group" aria-label="Craft details">
+          <button type="button" data-frame="9" data-t="Cap toe" data-d="A separate toe cap, stitched on and hand-burnished until the shine goes deep.">Cap toe</button>
+          <button type="button" data-frame="0" data-t="Closed lacing" data-d="Oxford lacing: the quarters sit under the vamp, so the shoe closes clean over the instep.">Lacing</button>
+          <button type="button" data-frame="18" data-t="Blake stitch" data-d="The sole is stitched straight through to the insole. It keeps the shoe slim and flexible, and it can be resoled.">Sole</button>
+          <button type="button" data-frame="27" data-t="Heel counter" data-d="A firm leather counter holds the heel in place and keeps the back of the shoe from collapsing over years of wear.">Heel</button>
+        </div>
+        <p class="ox-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12a8 8 0 0 1 14.5-4.6M20 12a8 8 0 0 1-14.5 4.6"/><path d="M18.5 3v4.4h-4.4M5.5 21v-4.4h4.4"/></svg><b data-ox-deg>000°</b> / 360°</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
+<script>
+(function () {
+  var UID = '063a73c944614923964784a1e13f4f79';
+  var T = [4.33, -1.0, 0.5], R = 42, EL = 0.33;
+  var LEATHER = { black: null, oxblood: [0.028, 0.0025, 0.002], tan: [0.13, 0.048, 0.013], espresso: [0.016, 0.0065, 0.0035] };
+  var viewer = document.querySelector('.he__viewer');
+  var note = viewer.querySelector('.he__note');
+  var stops = viewer.querySelectorAll('.he__stops button');
+  var deg = document.querySelectorAll('[data-ox-deg]');
+  function camFor(frame, r, el) {
+    var a = -2.2 + frame * Math.PI * 2 / 36; r = r || R; el = el || EL;
+    return [T[0] + r * Math.cos(a) * Math.cos(el), T[1] + r * Math.sin(a) * Math.cos(el), T[2] + r * Math.sin(el)];
+  }
+  new Sketchfab(document.getElementById('sf')).init(UID, {
+    autostart: 1, transparent: 1, preload: 1, camera: 0,
+    ui_infos: 0, ui_controls: 0, ui_stop: 0, ui_inspector: 0, ui_settings: 0, ui_help: 0, ui_vr: 0, ui_ar: 0,
+    ui_fullscreen: 0, ui_annotations: 0, ui_watermark_link: 0, ui_hint: 0, ui_loading: 0, scrollwheel: 0,
+    success: function (api) {
+      api.start();
+      api.addEventListener('viewerready', function () {
+        api.setCameraLookAt(camFor(0), T, 0);
+        setTimeout(function () { viewer.classList.add('is-live'); }, 300);
+        api.getMaterialList(function (e, mats) {
+          var leather = mats.filter(function (m) { return /PelleEsterna/.test(m.name); })[0];
+          document.querySelectorAll('.ox-swatch').forEach(function (b) {
+            b.addEventListener('click', function () {
+              document.querySelectorAll('.ox-swatch').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+              document.querySelectorAll('[data-ox-leather-name]').forEach(function (n) { n.textContent = b.querySelector('span').textContent; });
+              var c = LEATHER[b.dataset.leather];
+              if (!leather) return;
+              if (c) { leather.channels.AlbedoPBR.color = c; leather.channels.AlbedoPBR.factor = 1; }
+              else { leather.channels.AlbedoPBR.factor = 0; }
+              api.setMaterial(leather);
+            });
+          });
+        });
+        stops.forEach(function (b) {
+          b.addEventListener('click', function () {
+            stops.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+            note.querySelector('b').textContent = b.dataset.t;
+            note.querySelector('span').textContent = b.dataset.d;
+            note.dataset.hidden = 'false';
+            viewer.classList.add('touched');
+            api.setCameraLookAt(camFor(+b.dataset.frame, 30, 0.28), T, 1.4);
+            deg.forEach(function (d) { d.textContent = String(+b.dataset.frame * 10).padStart(3, '0') + '\u00b0'; });
+          });
+        });
+      });
+    },
+    error: function () { viewer.querySelector('.ox-stage').innerHTML = '<img class="ox-frame" src="360-a/black-00.webp" alt="Cap-toe oxford">'; }
+  });
+})();
+</script>
+<section class="hx-note" aria-label="About this option">
+  <div class="container">
+    <div><p class="hx-tag">Option G · Live 3D</p><h2>Live 3D (Sketchfab)</h2></div>
+    <ul><li><b>Interaction</b><span>The real model, live. Visitors can orbit and zoom freely. The swatches re-colour the leather material in real time through the Sketchfab Viewer API, and the craft buttons fly the camera to each detail.</span></li><li><b>Trade-off</b><span>Full 3D, but a 600k-polygon model means a heavier first load. The Sketchfab logo stays visible unless the model owner has a paid Sketchfab plan.</span></li><li><b>Where it runs</b><span>In this mockup and on the Shopify theme. It cannot be shown as a claude.ai artifact, because those block third-party iframes.</span></li></ul>
+  </div>
+</section>
+</main>
+<script src="main.js"></script>

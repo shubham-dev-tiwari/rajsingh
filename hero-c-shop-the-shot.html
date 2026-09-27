@@ -1,0 +1,128 @@
+<title>Hero C Shop the Shot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Shared: hero option chrome */
+.hx-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.82); }
+.hx-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+.hx-lede { font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,.78); max-width: 46ch; font-weight: 300; }
+.hx-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn--ghost-white { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.btn--ghost-white:hover { background: #fff; color: #111; border-color: #fff; }
+.btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hx-note { background: var(--bg-soft); border-top: 1px solid var(--border-soft); padding-block: 56px; }
+.hx-note .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px 64px; }
+.hx-note h2 { font-family: var(--font-heading); font-size: 1.3rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 400; line-height: 1.4; }
+.hx-note .hx-tag { font-family: var(--font-heading); font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+.hx-note ul { display: grid; gap: 14px; }
+.hx-note li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; font-size: .92rem; color: var(--text-2); line-height: 1.65; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
+.hx-note li b { font-family: var(--font-heading); font-weight: 400; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text); padding-top: 3px; }
+@media (max-width: 799px) { .hx-note .container { grid-template-columns: 1fr; } .hx-note li { grid-template-columns: 1fr; gap: 4px; } }
+
+.hc { position: relative; height: calc(100vh - 40px); min-height: 640px; max-height: 920px; background: #0b0b0b; overflow: hidden; color: #fff; }
+.hc > picture, .hc > picture img { width: 100%; height: 100%; }
+.hc > picture img { object-fit: cover; object-position: 70% center; }
+.hc::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.2) 50%, rgba(0,0,0,0) 70%); }
+.hc__content { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; padding-top: var(--header-h, 100px); }
+.hc__content .container { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 48px; }
+.hc__text { display: grid; gap: 22px; justify-items: start; max-width: 600px; align-self: center; }
+.hc .h1 { font-size: clamp(2.2rem, 4.8vw, 4.2rem); line-height: 1.12; }
+.hc__card { z-index: 3; width: 340px; background: rgba(252,251,250,.97); color: var(--text); border-radius: 20px; padding: 16px; display: grid; gap: 14px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.6); margin-bottom: 8vh; animation: rise 1s .5s var(--ease) both; }
+.hc__row { display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: center; }
+.hc__row img { width: 96px; height: 96px; object-fit: cover; border-radius: 12px; }
+.hc__label { font-family: var(--font-heading); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text-3); }
+.hc__name { font-family: var(--font-heading); font-size: .86rem; letter-spacing: .12em; text-transform: uppercase; line-height: 1.45; margin-block: 4px 6px; }
+.hc__price { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.hc__price span { font-weight: 500; }
+.hc__price s { color: var(--text-3); font-size: .82rem; }
+.hc__save { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; background: #111; color: #fff; padding: 3px 8px; border-radius: 999px; }
+.hc__sizes { display: flex; gap: 6px; flex-wrap: wrap; }
+.hc__sizes button { min-width: 38px; height: 34px; border: 1px solid var(--border); border-radius: 8px; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.hc__sizes button[aria-pressed="true"] { background: #111; color: #fff; border-color: #111; }
+.hc__card .btn { min-height: 46px; border-radius: 999px; }
+.hc__browse { justify-self: center; font-size: .8rem; color: var(--text-2); }
+.hc__dot { position: absolute; z-index: 3; left: 76%; top: 44%; width: 30px; height: 30px; border-radius: 50%; background: #fff; color: #111; display: grid; place-items: center; font-family: var(--font-heading); font-size: .72rem; box-shadow: 0 0 0 0 rgba(255,255,255,.6); animation: hc-pulse 2.2s infinite; }
+@keyframes hc-pulse { 70% { box-shadow: 0 0 0 16px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
+@media (max-width: 1149px) { .hc__dot { display: none; } }
+@media (max-width: 999px) {
+  .hc { height: auto; max-height: none; min-height: 0; }
+  .hc > picture { position: absolute; inset: 0; }
+  .hc__content { position: relative; padding: calc(var(--header-h, 80px) + 10vh) 0 28px; }
+  .hc__content .container { grid-template-columns: 1fr; gap: 40vh; }
+  .hc::after { background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.1) 45%, rgba(0,0,0,.55) 100%); }
+  .hc__card { width: 100%; max-width: 420px; margin: 0; }
+}
+@media (max-width: 699px) { .hc__content .container { gap: 34vh; } .hc .hx-lede { display: none; } }
+
+</style>
+<aside class="announcement" aria-label="Announcements">
+  <button class="announcement__arrow" data-ann="-1" aria-label="Previous"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+  <div class="announcement__track"><p class="announcement__item is-active"><span class="announcement__highlight">Blake Stitched Construction</span></p><p class="announcement__item"><span class="announcement__text">Built to be resoled, not replaced</span></p><p class="announcement__item"><span class="announcement__highlight">Italian Design, Handcrafted in India</span></p></div>
+  <button class="announcement__arrow" data-ann="1" aria-label="Next"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+</aside>
+<header class="header header--transparent">
+  <div class="container header__inner">
+    <button class="header__burger" aria-label="Open menu" style="width:22px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <a class="header__logo" href="index.html"><img src="images/logo.png" alt="Raj Singh's" width="140" height="33"></a>
+    <nav class="header__nav" aria-label="Primary"><a href="collection.html">Boots</a><a href="collection.html">Lace ups</a><a href="collection.html">Loafers</a><a href="collection.html">Monk Straps</a><a href="#">Contact Us</a></nav>
+    <div class="header__actions">
+      <a href="#" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
+      <a class="header__account" href="#" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></a>
+      <a class="header__cart" href="#" aria-label="Cart" data-open="cart-drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="header__cart-count" style="display:none">0</span></a>
+    </div>
+  </div>
+</header>
+<div class="drawer drawer--right" id="cart-drawer" aria-hidden="true">
+  <div class="drawer__overlay" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__head"><p class="h6" style="font-size:.85rem">Cart</p><button data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <div class="drawer__body" id="cart-body"></div>
+    <div class="drawer__foot" id="cart-foot" hidden><a class="btn btn-atc btn--block" href="#">Checkout · <span id="cart-total"></span></a></div>
+  </div>
+</div>
+<main id="main">
+<section class="hc" aria-label="Featured">
+  <picture><source media="(max-width: 699px)" srcset="images/hero-1-mobile.png"><img src="images/hero-1.png" alt="Man pulling on black Alon jodhpur boots"></picture>
+  <span class="hc__dot" aria-hidden="true">1</span>
+  <div class="hc__content"><div class="container">
+    <div class="hc__text">
+      <p class="hx-eyebrow">The Alon Jodhpur</p>
+      <h1 class="h1">Lasting<br>Luxury</h1>
+      <p class="hx-lede">Polished full-grain calf, a single buckled strap and a Blake-stitched sole you can have redone for years.</p>
+      <div class="hx-ctas"><a class="btn btn--white" href="product.html">View the boot</a></div>
+    </div>
+    <div class="hc__card" aria-label="Product in this photo">
+      <div class="hc__row">
+        <img src="images/boot-alon-1.jpg" alt="Alon Jodhpur Boots, side view">
+        <div>
+          <p class="hc__label">1 · In this shot</p>
+          <p class="hc__name">Alon Jodhpur Boots</p>
+          <p class="hc__price"><span>Rs. 5,999</span><s>Rs. 9,999</s><em class="hc__save" style="font-style:normal">Save 4,000</em></p>
+        </div>
+      </div>
+      <div class="hc__sizes" role="group" aria-label="UK size">
+        <button type="button" aria-pressed="false">6</button><button type="button" aria-pressed="false">7</button><button type="button" aria-pressed="true">8</button><button type="button" aria-pressed="false">9</button><button type="button" aria-pressed="false">10</button><button type="button" aria-pressed="false">11</button>
+      </div>
+      <button class="btn btn--block" type="button" data-add data-variant="UK 8" data-title="Alon Jodhpur Boots" data-price="5999" data-img="images/boot-alon-1.jpg">Add to cart · Rs. 5,999</button>
+      <a class="hc__browse link-underline" href="collection.html">Browse all boots</a>
+    </div>
+  </div></div>
+</section>
+<script>
+document.querySelectorAll('.hc__sizes button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.hc__sizes button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+    var add = document.querySelector('.hc__card [data-add]'); if (add) add.dataset.variant = 'UK ' + b.textContent;
+  });
+});
+</script>
+<section class="hx-note" aria-label="About this option">
+  <div class="container">
+    <div><p class="hx-tag">Option C</p><h2>Shop the Shot</h2></div>
+    <ul><li><b>Layout</b><span>Same full-bleed image, with the boot in the photo sold right there in a product card.</span></li><li><b>Offer</b><span>Shows the live price, the struck-out MRP and the saving (Rs. 4,000) above the fold. That is the strongest hook on the homepage today, and it is currently buried in the Boots carousel.</span></li><li><b>CTAs</b><span>“Add to cart” goes straight to the cart drawer. “Browse all boots” catches visitors who want to compare first.</span></li><li><b>Best for</b><span>Paid social and ad traffic that lands on the homepage with high intent.</span></li></ul>
+  </div>
+</section>
+</main>
+<script src="main.js"></script>

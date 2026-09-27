@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wholecut Chelsea PDP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff;
+  --paper-2:#f6f4f1;
+  --ink:#141211;
+  --ink-2:#4a4541;
+  --mute:#8a837c;
+  --line:rgba(20,18,17,.10);
+  --line-2:rgba(20,18,17,.18);
+  --cognac:#8b4a26;
+  --cognac-bg:#f5ebe3;
+  --good:#2f6b45;
+  --display:"Tenor Sans","Didot","Times New Roman",serif;
+  --body:"Jost","Futura","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font:400 15px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.wrap{max-width:1320px;margin:0 auto;padding-inline:clamp(16px,4vw,48px);padding-block:28px 96px}
+
+/* breadcrumb */
+.crumbs{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;letter-spacing:.06em;color:var(--mute);margin-bottom:24px}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{color:var(--ink)}
+.crumbs span[aria-current]{color:var(--ink-2)}
+
+.pdp{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+
+/* ---------- gallery ---------- */
+.gallery{position:sticky;top:24px;display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px}
+.thumbs{display:flex;flex-direction:column;gap:10px}
+.thumb{width:76px;aspect-ratio:4/5;border-radius:10px;overflow:hidden;opacity:.55;outline:1px solid transparent;outline-offset:2px;transition:opacity .3s,outline-color .3s}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb:hover{opacity:.9}
+.thumb[aria-current="true"]{opacity:1;outline-color:var(--ink)}
+.stage{position:relative;border-radius:18px;overflow:hidden;background:var(--paper-2);aspect-ratio:4/5;max-width:100%}
+.stage__track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.stage__track::-webkit-scrollbar{display:none}
+.stage__slide{flex:0 0 100%;height:100%;scroll-snap-align:start;overflow:hidden}
+.stage__slide img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.stage:hover .stage__slide img{transform:scale(1.04)}
+.stage__tag{position:absolute;top:16px;left:16px;display:flex;gap:6px}
+.chip{font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ink);backdrop-filter:blur(6px)}
+.chip--dark{background:var(--ink);color:#fff}
+.stage__count{position:absolute;right:16px;bottom:16px;font-size:12px;letter-spacing:.08em;padding:6px 10px;border-radius:999px;background:rgba(20,18,17,.7);color:#fff;font-variant-numeric:tabular-nums}
+.stage__nav{position:absolute;inset:auto 16px 16px auto;display:none}
+.stage__arrows{position:absolute;inset:50% 12px auto 12px;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
+.arrow{pointer-events:auto;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;opacity:0;transition:opacity .3s,transform .3s var(--ease)}
+.stage:hover .arrow{opacity:1}
+.arrow:hover{transform:scale(1.06)}
+.arrow svg{width:14px;height:14px}
+.dots{display:none}
+
+/* ---------- buy box ---------- */
+.info{display:flex;flex-direction:column;gap:22px;padding-top:8px}
+.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin:0}
+.title{font:400 clamp(28px,3vw,40px)/1.12 var(--display);letter-spacing:.01em;margin:6px 0 0;text-wrap:balance}
+.subtitle{margin:8px 0 0;color:var(--ink-2);font-size:15px}
+.rating{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-2)}
+.stars{display:flex;gap:2px;color:var(--cognac)}
+.stars svg{width:14px;height:14px}
+.rating a{text-underline-offset:3px;text-decoration-color:var(--line-2)}
+.rating b{color:var(--ink);font-weight:500}
+
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px}
+.price__now{font:500 30px/1 var(--body);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.price__was{color:var(--mute);text-decoration:line-through;font-size:16px}
+.price__off{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cognac);background:var(--cognac-bg);padding:5px 9px;border-radius:6px}
+.price__note{flex-basis:100%;font-size:12px;color:var(--mute);margin-top:6px}
+
+.offer{display:flex;align-items:center;gap:14px;padding:12px 14px;border:1px dashed var(--line-2);border-radius:12px;background:var(--paper-2);font-size:13.5px}
+.offer__icon{flex:none;width:34px;height:34px;border-radius:50%;background:var(--paper);display:grid;place-items:center}
+.offer__icon svg{width:16px;height:16px}
+.offer p{margin:0;flex:1}
+.offer strong{font-weight:600}
+.offer__code{font:600 12px/1 var(--body);letter-spacing:.14em;padding:8px 10px;border-radius:8px;border:1px solid var(--ink);transition:background .2s,color .2s}
+.offer__code:hover,.offer__code.is-copied{background:var(--ink);color:#fff}
+
+.divider{height:1px;background:var(--line);border:0;margin:0}
+
+.opt{display:flex;flex-direction:column;gap:12px}
+.opt__head{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;letter-spacing:.04em}
+.opt__head span{color:var(--mute)}
+.opt__head b{font-weight:500;color:var(--ink)}
+.opt__link{font-size:13px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-2)}
+.opt__link:hover{text-decoration-color:var(--ink)}
+
+.colours{display:flex;gap:10px}
+.colour{display:flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border:1px solid var(--line-2);border-radius:999px;font-size:13px;transition:border-color .2s}
+.colour img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+.colour[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+
+.sizes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.size{height:48px;border:1px solid var(--line-2);border-radius:10px;font-size:14px;font-variant-numeric:tabular-nums;position:relative;transition:border-color .2s,background .2s,color .2s}
+.size:hover:not(:disabled){border-color:var(--ink)}
+.size[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.size:disabled{color:var(--mute);cursor:not-allowed;background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(20,18,17,.05) 6px 7px)}
+.size__low{position:absolute;top:-7px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.08em;text-transform:uppercase;background:var(--cognac);color:#fff;padding:2px 5px;border-radius:4px;white-space:nowrap}
+.fit{margin:0;font-size:13px;color:var(--ink-2);display:flex;gap:8px;align-items:center}
+.fit svg{width:15px;height:15px;flex:none;color:var(--good)}
+
+.custom{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;text-align:left;width:100%;transition:border-color .2s,background .2s}
+.custom:hover{border-color:var(--ink);background:var(--paper-2)}
+.custom__icon{flex:none;width:40px;height:40px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center}
+.custom__icon svg{width:18px;height:18px}
+.custom__text{flex:1;display:flex;flex-direction:column}
+.custom__text b{font-weight:500;font-size:14px}
+.custom__text span{font-size:12.5px;color:var(--mute)}
+.custom>svg{width:14px;height:14px;color:var(--mute)}
+
+.ship{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--ink-2)}
+.ship svg{width:20px;height:20px;flex:none;margin-top:1px}
+.ship p{margin:0}
+.ship b{color:var(--ink);font-weight:500}
+.ship small{display:block;font-size:12px;color:var(--mute)}
+
+.buy{display:grid;grid-template-columns:auto 1fr;gap:10px}
+.qty{display:flex;align-items:center;height:56px;border:1px solid var(--line-2);border-radius:999px}
+.qty button{width:44px;height:100%;display:grid;place-items:center;color:var(--ink-2)}
+.qty button:hover{color:var(--ink)}
+.qty svg{width:12px;height:12px}
+.qty output{min-width:22px;text-align:center;font-variant-numeric:tabular-nums}
+.btn{height:56px;border-radius:999px;font:500 13px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .3s var(--ease),background .2s,box-shadow .3s}
+.btn--primary{background:var(--ink);color:#fff}
+.btn--primary:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(20,18,17,.18)}
+.btn--primary .sep{opacity:.4}
+.btn--ghost{grid-column:1/-1;border:1px solid var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:#fff}
+.btn.is-added{background:var(--good)}
+
+.pay{display:flex;align-items:center;justify-content:center;gap:10px;font-size:12px;color:var(--mute);margin-top:-8px}
+.pay svg{width:13px;height:13px}
+
+.trust{list-style:none;margin:0;padding:18px 0;display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
+.trust li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding-inline:8px;font-size:12.5px;line-height:1.35;color:var(--ink-2)}
+.trust li+li{border-left:1px solid var(--line)}
+.trust svg{width:24px;height:24px;color:var(--ink)}
+.trust b{display:block;color:var(--ink);font-weight:500;font-size:13px}
+
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0}
+.specs div{background:var(--paper);padding:14px 16px}
+.specs dt{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.specs dd{margin:4px 0 0;font-size:14px}
+
+.acc{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;font:400 15px/1.3 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary svg{width:14px;height:14px;transition:transform .35s var(--ease)}
+.acc[open] summary svg{transform:rotate(45deg)}
+.acc__body{padding:0 0 20px;color:var(--ink-2);font-size:14.5px;max-width:62ch}
+.acc__body p{margin:0 0 10px}
+.acc__body ul{margin:0;padding-left:18px;display:grid;gap:6px}
+
+.help{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--ink-2)}
+.help a{color:var(--ink);font-weight:500;text-underline-offset:3px}
+.help svg{width:18px;height:18px;color:#1f9d55;flex:none}
+
+/* sticky mobile bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .4s var(--ease)}
+.bar.is-on{transform:none}
+.bar__meta{flex:1;min-width:0;display:flex;flex-direction:column}
+.bar__meta b{font-weight:500;font-size:16px;font-variant-numeric:tabular-nums}
+.bar__meta span{font-size:12px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .btn{height:48px;padding-inline:22px;flex:none}
+
+/* page-load */
+@media (prefers-reduced-motion:no-preference){
+  .info>*{animation:rise .7s var(--ease) both}
+  .info>*:nth-child(2){animation-delay:.05s}.info>*:nth-child(3){animation-delay:.1s}.info>*:nth-child(4){animation-delay:.15s}
+  .info>*:nth-child(5){animation-delay:.2s}.info>*:nth-child(n+6){animation-delay:.25s}
+  @keyframes rise{from{opacity:.001;transform:translateY(10px)}}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .pdp{grid-template-columns:1fr}
+  .gallery{position:static;grid-template-columns:1fr}
+  .thumbs{display:none}
+  .stage{margin-inline:calc(-1 * clamp(16px,4vw,48px));border-radius:0;aspect-ratio:4/4.6}
+  .arrow{display:none}
+  .dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+  .dots i{width:6px;height:6px;border-radius:999px;background:var(--line-2);transition:width .3s var(--ease),background .3s}
+  .dots i.on{width:18px;background:var(--ink)}
+  .bar{display:flex}
+  .wrap{padding-block:16px 120px}
+  .crumbs{margin-bottom:14px}
+}
+@media (max-width:480px){
+  .sizes{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .trust{grid-template-columns:1fr;padding:6px 0}
+  .trust li{flex-direction:row;text-align:left;padding:12px 0;gap:14px}
+  .trust li+li{border-left:0;border-top:1px solid var(--line)}
+  .offer{flex-wrap:wrap}
+  .specs{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#">Home</a>/<a href="#">Boots</a>/<span aria-current="page">Wholecut Chelsea</span></nav>
+
+  <div class="pdp">
+    <!-- ============ GALLERY ============ -->
+    <section class="gallery" aria-label="Product images">
+      <div class="thumbs" id="thumbs"></div>
+      <div>
+        <div class="stage">
+          <div class="stage__track" id="track"></div>
+          <div class="stage__tag"><span class="chip chip--dark">Handmade in Agra</span><span class="chip">Bestseller</span></div>
+          <div class="stage__arrows">
+            <button class="arrow" data-dir="-1" aria-label="Previous image"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+            <button class="arrow" data-dir="1" aria-label="Next image"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+          </div>
+          <span class="stage__count" id="count">1 / 6</span>
+        </div>
+        <div class="dots" id="dots"></div>
+      </div>
+    </section>
+
+    <!-- ============ BUY BOX ============ -->
+    <section class="info" aria-labelledby="p-title">
+      <header>
+        <p class="eyebrow">Raj Singh's · Formal Boots</p>
+        <h1 class="title" id="p-title">Premium Wholecut Chelsea Boot</h1>
+        <p class="subtitle">Cut from one piece of full-grain leather. Made for weddings and formal wear.</p>
+      </header>
+
+      <div class="rating">
+        <span class="stars" aria-label="Rated 4.5 out of 5">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.6l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.8Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.6l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.8Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.6l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.8Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.6l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.8Z"/></svg>
+          <svg viewBox="0 0 24 24"><defs><linearGradient id="half"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="currentColor" stop-opacity=".22"/></linearGradient></defs><path fill="url(#half)" d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.6l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.8Z"/></svg>
+        </span>
+        <span><b>4.5</b> · <a href="#reviews">128 reviews</a></span>
+      </div>
+
+      <div class="price">
+        <span class="price__now">₹5,499</span>
+        <span class="price__was">₹9,999</span>
+        <span class="price__off">45% off</span>
+        <span class="price__note">You save ₹4,500 · Inclusive of all taxes</span>
+      </div>
+
+      <div class="offer">
+        <span class="offer__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12V4h8l10 10-8 8L3 12Z"/><circle cx="7.5" cy="8.5" r="1.3"/></svg></span>
+        <p><strong>Buy 2, get an extra 15% off.</strong> Plus 10% off on prepaid orders.</p>
+        <button class="offer__code" id="code" data-code="EXTRA15">EXTRA15</button>
+      </div>
+
+      <hr class="divider">
+
+      <div class="opt">
+        <div class="opt__head"><p style="margin:0"><span>Colour</span> &nbsp;<b id="colour-name">Black</b></p></div>
+        <div class="colours">
+          <button class="colour" aria-pressed="true" data-colour="Black" data-slide="0"><img src="images/boot-chelsea-1.jpg" alt="">Black</button>
+          <button class="colour" aria-pressed="false" data-colour="Dark Brown" data-slide="4"><img src="images/boot-chelsea-5.jpg" alt="">Dark Brown</button>
+        </div>
+      </div>
+
+      <div class="opt">
+        <div class="opt__head"><p style="margin:0"><span>Size</span> &nbsp;<b id="size-name">Select a UK size</b></p><a class="opt__link" href="#">Size guide</a></div>
+        <div class="sizes" id="sizes">
+          <button class="size" aria-pressed="false">UK 6</button>
+          <button class="size" aria-pressed="false">UK 7</button>
+          <button class="size" aria-pressed="false"><span class="size__low">2 left</span>UK 8</button>
+          <button class="size" aria-pressed="false">UK 9</button>
+          <button class="size" aria-pressed="false">UK 10</button>
+          <button class="size" disabled aria-label="UK 11, sold out">UK 11</button>
+        </div>
+        <p class="fit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m5 12 5 5 9-10"/></svg>True to size. Most customers order their usual UK size.</p>
+      </div>
+
+      <button class="custom" type="button">
+        <span class="custom__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20 15 9m-2-2 4 4M14 4l6 6-2 2-6-6 2-2Z"/></svg></span>
+        <span class="custom__text"><b>Customise your pair</b><span>Leather, sole and cushioning upgrades</span></span>
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg>
+      </button>
+
+      <div class="ship">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 6h12v10H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+        <p>Handcrafted for you and delivered by <b id="eta">Sun, 4 Oct</b><small>Free shipping across India · Order within <span id="cutoff">5h 12m</span> to lock this date</small></p>
+      </div>
+
+      <div class="buy">
+        <div class="qty" role="group" aria-label="Quantity">
+          <button data-q="-1" aria-label="Decrease quantity"><svg viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8"/></svg></button>
+          <output id="qty">1</output>
+          <button data-q="1" aria-label="Increase quantity"><svg viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2v8"/></svg></button>
+        </div>
+        <button class="btn btn--primary" id="atc">Add to cart <span class="sep">·</span> <span id="atc-price">₹5,499</span></button>
+        <button class="btn btn--ghost">Buy it now</button>
+      </div>
+      <p class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Secure checkout · UPI, cards, wallets and COD</p>
+
+      <ul class="trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span><b>100% full-grain</b>Genuine leather upper</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><span><b>15-day exchange</b>Arranged on WhatsApp</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14 4 20 10l-9 9H5v-6l9-9Z"/><path d="m12 6 6 6"/></svg><span><b>Resoleable</b>Blake stitched to last</span></li>
+      </ul>
+
+      <dl class="specs">
+        <div><dt>Upper</dt><dd>Full-grain calf leather</dd></div>
+        <div><dt>Construction</dt><dd>Blake stitched</dd></div>
+        <div><dt>Sole</dt><dd>Leather with rubber grip</dd></div>
+        <div><dt>Made in</dt><dd>Agra, by hand</dd></div>
+      </dl>
+
+      <div>
+        <details class="acc" open>
+          <summary>The details<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 1v10M1 6h10"/></svg></summary>
+          <div class="acc__body">
+            <p>The wholecut is made from a single piece of leather with no seams across the vamp, which makes it the hardest pattern for a shoemaker to last. Elastic side gussets let you slip them on in seconds, and the slim chisel toe keeps them sharp with a sherwani, a bandhgala or a suit.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary>Care guide<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 1v10M1 6h10"/></svg></summary>
+          <div class="acc__body"><ul>
+            <li>Insert cedar shoe trees after every wear.</li>
+            <li>Brush off dust with a horsehair brush before polishing.</li>
+            <li>Condition every 6–8 wears with a neutral leather cream.</li>
+            <li>Let the leather rest 24 hours between wears.</li>
+          </ul></div>
+        </details>
+        <details class="acc">
+          <summary>Shipping &amp; returns<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 1v10M1 6h10"/></svg></summary>
+          <div class="acc__body"><ul>
+            <li>Each pair is made to order and delivered in 7 days.</li>
+            <li>Return or exchange within 15 days of delivery on WhatsApp at +91 87555 32123.</li>
+            <li>Refunds go straight to your bank account once the return is processed.</li>
+          </ul></div>
+        </details>
+      </div>
+
+      <p class="help"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.7 6.5 1.7 7 0 12.7-5.7 12.7-12.7S23 3 16 3Zm0 23.2c-2.1 0-4.1-.6-5.8-1.7l-.4-.2-3.9 1.2 1.3-3.8-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5.1 9.8 10 5 16 5s10.9 4.8 10.9 10.8S22 26.2 16 26.2Z"/></svg><span>Not sure about your size? <a href="#">Chat with us on WhatsApp</a></span></p>
+    </section>
+  </div>
+</main>
+
+<!-- sticky mobile buy bar -->
+<div class="bar" id="bar" aria-hidden="true">
+  <div class="bar__meta"><b>₹5,499</b><span id="bar-sel">Black · Select size</span></div>
+  <button class="btn btn--primary" id="bar-atc">Add to cart</button>
+</div>
+
+<script>
+(() => {
+  const imgs = [1,2,3,4,5,6].map(n => `images/boot-chelsea-${n}.jpg`);
+  const track = document.getElementById('track'), thumbs = document.getElementById('thumbs'),
+        dots = document.getElementById('dots'), count = document.getElementById('count');
+  imgs.forEach((src, i) => {
+    track.insertAdjacentHTML('beforeend', `<div class="stage__slide"><img src="${src}" alt="Wholecut Chelsea boot, view ${i+1}" ${i ? 'loading="lazy"' : ''}></div>`);
+    thumbs.insertAdjacentHTML('beforeend', `<button class="thumb" data-i="${i}" aria-label="View image ${i+1}" aria-current="${i===0}"><img src="${src}" alt=""></button>`);
+    dots.insertAdjacentHTML('beforeend', `<i class="${i ? '' : 'on'}"></i>`);
+  });
+  let cur = 0;
+  const go = i => { cur = (i + imgs.length) % imgs.length; track.scrollTo({left: cur * track.clientWidth, behavior: 'smooth'}); };
+  const sync = () => {
+    cur = Math.round(track.scrollLeft / track.clientWidth);
+    count.textContent = `${cur+1} / ${imgs.length}`;
+    thumbs.querySelectorAll('.thumb').forEach((t, i) => t.setAttribute('aria-current', i === cur));
+    dots.querySelectorAll('i').forEach((d, i) => d.classList.toggle('on', i === cur));
+  };
+  track.addEventListener('scroll', () => requestAnimationFrame(sync), {passive: true});
+  thumbs.addEventListener('click', e => { const t = e.target.closest('.thumb'); if (t) go(+t.dataset.i); });
+  document.querySelectorAll('.arrow').forEach(a => a.addEventListener('click', () => go(cur + +a.dataset.dir)));
+
+  // colour
+  const colourName = document.getElementById('colour-name');
+  let colour = 'Black', size = null;
+  document.querySelectorAll('.colour').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.colour').forEach(x => x.setAttribute('aria-pressed', x === b));
+    colour = b.dataset.colour; colourName.textContent = colour; go(+b.dataset.slide); updateBar();
+  }));
+
+  // size
+  const sizeName = document.getElementById('size-name');
+  document.querySelectorAll('.size:not(:disabled)').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.size').forEach(x => x.setAttribute('aria-pressed', x === b));
+    size = b.textContent.replace('2 left', '').trim();
+    sizeName.textContent = size + (b.querySelector('.size__low') ? ' · only 2 left' : '');
+    updateBar();
+  }));
+
+  // qty
+  const qtyEl = document.getElementById('qty'), atcPrice = document.getElementById('atc-price');
+  let qty = 1;
+  document.querySelectorAll('[data-q]').forEach(b => b.addEventListener('click', () => {
+    qty = Math.min(9, Math.max(1, qty + +b.dataset.q));
+    qtyEl.textContent = qty; atcPrice.textContent = '₹' + (5499 * qty).toLocaleString('en-IN');
+  }));
+
+  // add to cart feedback
+  const atc = document.getElementById('atc');
+  const add = () => {
+    if (!size) { document.getElementById('sizes').scrollIntoView({behavior: 'smooth', block: 'center'}); sizeName.textContent = 'Pick a size to continue'; sizeName.style.color = 'var(--cognac)'; return; }
+    sizeName.style.color = '';
+    atc.classList.add('is-added'); atc.textContent = 'Added to cart';
+    setTimeout(() => { atc.classList.remove('is-added'); atc.innerHTML = `Add to cart <span class="sep">·</span> <span id="atc-price">₹${(5499*qty).toLocaleString('en-IN')}</span>`; }, 1800);
+  };
+  atc.addEventListener('click', add);
+  document.getElementById('bar-atc').addEventListener('click', add);
+
+  // coupon copy
+  const code = document.getElementById('code');
+  code.addEventListener('click', () => {
+    const done = () => { code.classList.add('is-copied'); code.textContent = 'Copied'; setTimeout(() => { code.classList.remove('is-copied'); code.textContent = 'EXTRA15'; }, 1500); };
+    navigator.clipboard?.writeText('EXTRA15').then(done, done) ?? done();
+  });
+
+  // delivery date: today + 7 days, cutoff at 8pm
+  const d = new Date(); d.setDate(d.getDate() + 7);
+  document.getElementById('eta').textContent = d.toLocaleDateString('en-IN', {weekday: 'short', day: 'numeric', month: 'short'});
+  const cut = new Date(); cut.setHours(20, 0, 0, 0); if (cut < new Date()) cut.setDate(cut.getDate() + 1);
+  const mins = Math.round((cut - new Date()) / 60000);
+  document.getElementById('cutoff').textContent = `${Math.floor(mins/60)}h ${mins%60}m`;
+
+  // sticky bar shows once main buttons scroll away
+  const bar = document.getElementById('bar'), barSel = document.getElementById('bar-sel');
+  function updateBar(){ barSel.textContent = `${colour} · ${size || 'Select size'}`; }
+  new IntersectionObserver(([e]) => { const on = !e.isIntersecting && e.boundingClientRect.top < 0; bar.classList.toggle('is-on', on); bar.setAttribute('aria-hidden', !on); })
+    .observe(document.querySelector('.buy'));
+})();
+</script>
+</body>
+</html>

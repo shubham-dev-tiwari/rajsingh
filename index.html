@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1c1c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Raj Singh&#x27;s">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<title>Raj Singh&#x27;s: High-Quality Leather Fashion &amp; Lifestyle</title>
+<meta name="description" content="Discover Raj Singh&#x27;s exquisite collection of premium leather apparels, crafted with precision and style. Explore luxury leather clothing, accessories and more.">
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="hero-options.css">
+<script>/* Hero option (mockup): ?hero=a|b|c, else last pick, else A. Set before paint so there is no flash. */
+(function(){var k='rs-hero',q=(location.search.match(/[?&]hero=([abc])/)||[])[1],v=q;try{v=v||localStorage.getItem(k);if(q)localStorage.setItem(k,q);}catch(e){}document.documentElement.dataset.hero=/^[abc]$/.test(v||'')?v:'a';})();</script>
+</head>
+<body>
+<a class="visually-hidden" href="#main">Skip to content</a>
+
+<!-- ============ ANNOUNCEMENT BAR (sticky, leather-black) ============ -->
+<aside class="announcement" aria-label="Announcements">
+  <button class="announcement__arrow" data-ann="-1" aria-label="Previous"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+  <div class="announcement__track"><p class="announcement__item is-active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="8" width="18" height="4"/><path d="M5 12v9h14v-9M12 8v13M12 8S10 3 7.5 4.5 9 8 12 8Zm0 0s2-5 4.5-3.5S15 8 12 8Z"/></svg><span class="announcement__highlight">Blake Stitched Construction</span></p><p class="announcement__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span class="announcement__text">Built to be resoled, not replaced</span></p><p class="announcement__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span class="announcement__highlight">Italian Design, Handcrafted in India</span></p><p class="announcement__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h12l3 6-9 12L3 9l3-6Z"/><path d="M3 9h18M9 3l3 18 3-18"/></svg><span class="announcement__text">Full-grain leather, finished by hand</span></p><p class="announcement__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 19C5 10 11 5 20 4c0 9-5 15-14 15"/><path d="M5 19 13 11"/></svg><span class="announcement__highlight">100% Full-Grain Leather</span></p><p class="announcement__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9L12 3Z"/></svg><span class="announcement__text">Ages beautifully with every wear</span></p></div>
+  <button class="announcement__arrow" data-ann="1" aria-label="Next"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+</aside>
+
+<!-- ============ HEADER (scheme-2, logo left + inline navigation) ============ -->
+<header class="header header--transparent">
+  <div class="container header__inner">
+    <button class="header__burger" aria-label="Open menu" data-open="menu-drawer" style="width:22px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <a class="header__logo" href="index.html"><img src="images/logo.png" alt="Raj Singh's" width="140" height="33"></a>
+    <nav class="header__nav" aria-label="Primary"><a href="collection.html">Boots</a><a href="collection.html">Lace ups</a><a href="collection.html">Loafers</a><a href="collection.html">Monk Straps</a><a href="#footer">Contact Us</a></nav>
+    <div class="header__actions">
+      <button class="header__country" aria-label="Country"><img class="flag" src="images/flag-in.svg" alt=""><svg width="9" height="9" style="width:9px;height:9px" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m2 4 4 4 4-4"/></svg></button>
+      <a href="#" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
+      <a class="header__account" href="#" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></a>
+      <a class="header__cart" href="#" aria-label="Cart" data-open="cart-drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="header__cart-count" style="display:none">0</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu drawer -->
+<div class="drawer drawer--left" id="menu-drawer" aria-hidden="true">
+  <div class="drawer__overlay" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__head"><img src="images/logo.png" class="logo-dark" alt="Raj Singh's" style="width:110px"><button data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <nav class="drawer__body drawer__menu"><a href="collection.html">Boots<span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></span></a><a href="collection.html">Lace ups<span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></span></a><a href="collection.html">Loafers<span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></span></a><a href="collection.html">Monk Straps<span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></span></a><a href="#footer">Contact Us<span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></span></a></nav>
+    <div class="drawer__foot">
+      <a href="#" class="read-more"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg> Account</a>
+      <div class="footer__social" style="margin:0"><a href="#" style="color:#111;border-color:#ddd" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5V13h2.7v8h3.3Z"/></svg></a><a href="#" style="color:#111;border-color:#ddd" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart drawer (show_shipping_text, show_cart_note, price in checkout button) -->
+<div class="drawer drawer--right" id="cart-drawer" aria-hidden="true">
+  <div class="drawer__overlay" data-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__head"><p class="h6" style="font-size:.85rem">Cart</p><button data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <div class="drawer__body" id="cart-body"></div>
+    <div class="drawer__foot" id="cart-foot" hidden>
+      <details class="facet"><summary>Add order note<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m2 4 4 4 4-4"/></svg></summary><textarea class="field" rows="3" style="border-radius:10px;resize:vertical" aria-label="Order note"></textarea></details>
+      <p style="font-size:.8rem;color:#999">Tax included and shipping calculated at checkout</p>
+      <a class="btn btn-atc btn--block" href="#">Checkout · <span id="cart-total"></span></a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO: OXFORD TURNTABLE (scroll-driven 360°, renders in ) ============ -->
+<section class="hf" data-hero-opt="a" aria-label="Featured: The Oxford, turned in full">
+  <div class="hf__pin">
+    <div class="container hf__inner">
+      <div class="hf__title">
+        <p class="hx-eyebrow">The Cap-Toe Oxford</p>
+        <h1 class="h1">One pair.<br>Full circle.</h1>
+        <p class="hx-lede">It turns through four leathers on its own. Every seam you see was placed by hand.</p>
+        <div class="ox-swatches" role="group" aria-label="Leather colour"><button type="button" class="ox-swatch" data-leather="black" aria-pressed="true" aria-label="Black leather"><i style="background:#141312"></i><span>Black</span></button><button type="button" class="ox-swatch" data-leather="oxblood" aria-pressed="false" aria-label="Oxblood leather"><i style="background:#4a1512"></i><span>Oxblood</span></button><button type="button" class="ox-swatch" data-leather="tan" aria-pressed="false" aria-label="Walnut leather"><i style="background:#7a5536"></i><span>Walnut</span></button><button type="button" class="ox-swatch" data-leather="espresso" aria-pressed="false" aria-label="Espresso leather"><i style="background:#3a2a22"></i><span>Espresso</span></button></div>
+        <p class="hf__cue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Tap a leather to jump to it</p>
+      </div>
+      <div class="hf__stage-wrap">
+        <div class="ox-stage ox-stage--film" role="img" aria-label="Cap-toe oxford turning slowly, fading through black, oxblood, walnut and espresso leather">
+          <video class="ox-film" muted loop playsinline preload="auto" poster="images/oxford-loop-poster.jpg" data-src="images/oxford-loop.mp4" aria-hidden="true"></video>
+        </div>
+        <p class="ox-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12a8 8 0 0 1 14.5-4.6M20 12a8 8 0 0 1-14.5 4.6"/><path d="M18.5 3v4.4h-4.4M5.5 21v-4.4h4.4"/></svg><b data-ox-deg>000°</b> / 360°</p>
+      </div>
+      <div class="hf__notes" aria-live="polite">
+        <div class="hf__note is-on"><small>I · Upper</small><h3>Full-grain calf</h3><p>The top layer of the hide, grain intact. It creases softly and takes a polish that deepens with every wear.</p></div>
+        <div class="hf__note"><small>II · Toe</small><h3>Hand-burnished cap</h3><p>The toe cap is stitched on separately, then burnished by hand until the shine sits deep in the leather.</p></div>
+        <div class="hf__note"><small>III · Sole</small><h3>Blake stitched</h3><p>Stitched straight through to the insole. Slim, flexible from day one, and made to be resoled rather than replaced.</p></div>
+        <div class="hf__note"><small>IV · Yours</small><h3>From Rs. 5,499</h3><p>Italian patterns, handcrafted in India, in four leathers.</p><a class="btn btn--white" href="collection.html">Shop Oxfords</a></div>
+      </div>
+    </div>
+    <div class="hf__track" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
+  </div>
+</section>
+
+<!-- ============ HERO B: THE BOOT EDIT (light editorial reel, images/product_video.mp4) ============ -->
+<section class="hv" data-hero-opt="b" aria-label="The Boot Edit film">
+  <div class="container hv__inner">
+    <div class="hv__head">
+      <p class="hv__eyebrow">The Boot Edit</p>
+      <h1 class="h1 hv__title">Four styles.<br>One bench.</h1>
+      <p class="hv__lede">Filmed in workshop light. Tap a style to jump to it in the reel, then shop the pair.</p>
+    </div>
+    <div class="hv__media">
+      <div class="hv__frame">
+        <video class="hv__video" src="images/product_video.mp4" muted loop playsinline preload="metadata" aria-label="Raj Singh's boots and shoes, filmed in the workshop"></video>
+        <span class="hv__now"><i></i><span data-hv-num>01</span> · <span data-hv-name>Monk Strap</span></span>
+        <button type="button" class="hv__play" aria-label="Pause film"><svg class="hv__icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg><svg class="hv__icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></button>
+      </div>
+      <p class="hv__meta"><span>Blake stitched</span><span>Full-grain leather</span><span>Built to be resoled</span></p>
+    </div>
+    <ol class="hv__chapters" aria-label="Styles in this film">
+      <li><button type="button" class="hv__chapter" data-start="0" data-end="3" data-href="collection.html" aria-current="true"><span class="hv__num">01</span><span class="hv__text"><span class="hv__name">Monk Strap</span><span class="hv__short">Monk</span><span class="hv__detail">Suede boot and double-buckle calf</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="hv__bar" aria-hidden="true"><i></i></span></button></li>
+      <li><button type="button" class="hv__chapter" data-start="3" data-end="4.5" data-href="collection.html"><span class="hv__num">02</span><span class="hv__text"><span class="hv__name">Wingtip Brogue</span><span class="hv__short">Brogue</span><span class="hv__detail">Black calf, hand-punched</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="hv__bar" aria-hidden="true"><i></i></span></button></li>
+      <li><button type="button" class="hv__chapter" data-start="4.5" data-end="6" data-href="collection.html"><span class="hv__num">03</span><span class="hv__text"><span class="hv__name">Jodhpur Boot</span><span class="hv__short">Jodhpur</span><span class="hv__detail">Strap and buckle, Blake stitched</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="hv__bar" aria-hidden="true"><i></i></span></button></li>
+      <li><button type="button" class="hv__chapter" data-start="6" data-end="10" data-href="collection.html"><span class="hv__num">04</span><span class="hv__text"><span class="hv__name">Derby Boot</span><span class="hv__short">Derby</span><span class="hv__detail">Lace-up, on foot and on the step</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="hv__bar" aria-hidden="true"><i></i></span></button></li>
+    </ol>
+    <div class="hv__ctas">
+      <a class="btn btn--pill hv__shop" href="collection.html">Shop <span data-hv-name>Monk Strap</span></a>
+      <a class="btn btn--pill btn--outline" href="collection.html">All styles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HERO C: LET'S DO CHELSEA (full-bleed shoppable film, images/lets_do.mp4) ============ -->
+<section class="hc" data-hero-opt="c" aria-label="Let's do Chelsea film">
+  <div class="hc__stage">
+    <video class="hc__video" src="images/lets_do.mp4" muted loop playsinline preload="metadata" aria-label="Chelsea boots on a pedestal, then worn"></video>
+    <div class="hc__scrim" aria-hidden="true"></div>
+    <div class="container hc__inner">
+      <div class="hc__copy">
+        <p class="hc__eyebrow">The Chelsea, worn in</p>
+        <h1 class="hc__title">Let's do<br>Chelsea.</h1>
+        <p class="hc__lede">Wholecut calf, elastic gussets, a Blake-stitched sole. Pull on, walk out, from the office to the wedding.</p>
+        <div class="hc__ctas">
+          <a class="btn btn--pill btn--white" href="collection.html">Shop Chelsea Boots</a>
+          <button type="button" class="hc__sound" aria-pressed="false"><svg class="hc__icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="m16 10 5 5M21 10l-5 5"/></svg><svg class="hc__icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span>Sound off</span></button>
+        </div>
+      </div>
+      <div class="hc__time" aria-hidden="true"><span data-hc-clock>00:00</span><span class="hc__line"><i></i></span><span>00:10</span></div>
+    </div>
+  </div>
+  <aside class="hc__card" aria-label="Featured in the film">
+    <div class="hc__product">
+      <a href="product.html" class="hc__thumb"><img src="images/boot-chelsea-1.jpg" alt="Wholecut Chelsea boot in black leather" width="80" height="80"></a>
+      <div class="hc__info">
+        <span class="hc__rating"><span class="stars">★</span> 4.5 · In the film</span>
+        <a href="product.html" class="hc__name">Wholecut Chelsea Boots</a>
+        <span class="hc__price"><b>Rs. 5,499</b><s>Rs. 9,999</s></span>
+      </div>
+    </div>
+    <div class="hc__sizes" role="group" aria-label="UK size">
+      <button type="button" class="hc__size" aria-pressed="false">6</button><button type="button" class="hc__size" aria-pressed="false">7</button><button type="button" class="hc__size" aria-pressed="false">8</button><button type="button" class="hc__size" aria-pressed="false">9</button><button type="button" class="hc__size" aria-pressed="false">10</button>
+    </div>
+    <button type="button" class="btn btn--pill btn--block hc__atc" disabled data-add data-title="Premium Wholecut Chelsea Boots | Handcrafted Men&#x27;s Formal Wedding Footwear" data-price="5499" data-img="images/boot-chelsea-1.jpg">Select a size</button>
+  </aside>
+</section>
+
+<!-- Mockup only: pick which hero the home page shows (remembered per browser, or ?hero=a|b|c) -->
+<div class="hero-switch" role="group" aria-label="Hero option (mockup)">
+  <span class="hero-switch__label">Hero</span>
+  <button type="button" data-hero-pick="a" title="A · Full Circle turntable">A</button>
+  <button type="button" data-hero-pick="b" title="B · The Boot Edit film">B</button>
+  <button type="button" data-hero-pick="c" title="C · Let's do Chelsea film">C</button>
+</div>
+
+<!-- ============ FEATURED COLLECTIONS: BOOTS ============ -->
+
+<section class="section section--bordered">
+  <div class="container" data-carousel>
+    <div class="collection-head">
+      <h2 class="h2">Boots</h2>
+      <a class="pill-link" href="collection.html">View all</a>
+    </div>
+    <div class="product-carousel-wrap">
+      <div class="product-carousel">
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-40%</span>
+    <a class="product-card__media" href="product.html"><img src="images/boot-alon-1.jpg" alt="Alon Jodhpur Boots: Handcrafted Elegance for the Modern Gentleman" loading="lazy"><img src="images/boot-alon-2.jpg" alt="" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"><span class="stars">★</span>4.8</div><div class="swatches"></div></div>
+    <a class="product-card__title" href="product.html" title="Alon Jodhpur Boots: Handcrafted Elegance for the Modern Gentleman">Alon Jodhpur Boots: Handcrafted Elegance for the Modern Gentleman</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,999.00</span><s>Rs. 9,999.00</s></div><span class="product-card__save">Save Rs. 4,000</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Alon Jodhpur Boots: Handcrafted Elegance for the Modern Gentleman" data-price="5999" data-img="images/boot-alon-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-45%</span>
+    <a class="product-card__media" href="product.html"><img src="images/boot-chelsea-1.jpg" alt="Premium Wholecut Chelsea Boots | Handcrafted Men&#x27;s Formal Wedding Footwear" loading="lazy"><img src="images/boot-chelsea-2.jpg" alt="" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"><span class="stars">★</span>4.5</div><div class="swatches"><span class="swatch" style="background:#111"></span><span class="swatch" style="background:#5a3418"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Premium Wholecut Chelsea Boots | Handcrafted Men&#x27;s Formal Wedding Footwear">Premium Wholecut Chelsea Boots | Handcrafted Men&#x27;s Formal Wedding Footwear</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.00</span><s>Rs. 9,999.00</s></div><span class="product-card__save">Save Rs. 4,500</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Premium Wholecut Chelsea Boots | Handcrafted Men&#x27;s Formal Wedding Footwear" data-price="5499" data-img="images/boot-chelsea-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-38%</span>
+    <a class="product-card__media" href="product.html"><img src="images/formal-1.jpg" alt="Luxury Leather Formal Shoes for Men | Exquisite Craftsmanship" loading="lazy"><img src="images/formal-2.jpg" alt="" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"><span class="stars">★</span>4.4</div><div class="swatches"><span class="swatch" style="background:#111"></span><span class="swatch" style="background:#7a4a1f"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Luxury Leather Formal Shoes for Men | Exquisite Craftsmanship">Luxury Leather Formal Shoes for Men | Exquisite Craftsmanship</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.00</span><s>Rs. 8,999.00</s></div><span class="product-card__save">Save Rs. 3,500</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Luxury Leather Formal Shoes for Men | Exquisite Craftsmanship" data-price="5499" data-img="images/formal-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-38%</span>
+    <a class="product-card__media" href="product.html"><img src="images/boot-comfort-1.jpg" alt="Experience Comfort: Leather Chelsea Boots for Men with Sturdy Sole Support" loading="lazy"><img src="images/boot-comfort-2.jpg" alt="" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"><span class="stars">★</span>4.4</div><div class="swatches"><span class="swatch" style="background:#111"></span><span class="swatch" style="background:#7a4a1f"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Experience Comfort: Leather Chelsea Boots for Men with Sturdy Sole Support">Experience Comfort: Leather Chelsea Boots for Men with Sturdy Sole Support</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.00</span><s>Rs. 8,999.00</s></div><span class="product-card__save">Save Rs. 3,500</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Experience Comfort: Leather Chelsea Boots for Men with Sturdy Sole Support" data-price="5499" data-img="images/boot-comfort-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+      </div>
+      <button class="round-btn" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+      <button class="round-btn" data-dir="1" aria-label="Next"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORIGIN STORY (sections/origin-story.liquid) ============ -->
+<section class="origin-story origin-story--end origin-story--mirror" aria-labelledby="origin-story-heading" style="--origin-focal: 50% 35%;">
+  <div class="origin-story__media"><img src="images/legacy-workshop.png" alt="Raj Singh craftsman hand-stitching a brown leather shoe at his workbench" loading="lazy"></div>
+  <div class="origin-story__inner">
+    <div class="origin-story__copy reveal">
+      <p class="origin-story__eyebrow">The Origin Story</p>
+      <h2 class="origin-story__heading" id="origin-story-heading">The Raj Singh <em>Legacy</em></h2>
+      <div class="origin-story__text"><p>Born from decades of leather-working, Raj Singh carries a traditional craft into modern luxury. Every pair is cut, lasted and stitched by hand, then finished to be worn for years and resoled when the time comes.</p></div>
+      <dl class="origin-story__facts">
+        <div><dt>Construction</dt><dd>Blake stitched</dd></div>
+        <div><dt>Built to</dt><dd>Be resoled</dd></div>
+        <div><dt>Made in</dt><dd>India, by hand</dd></div>
+      </dl>
+      <a class="origin-story__cta" href="#">Read our story <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MULTI-COLUMN: WHY RAJ SINGH (show_cards) ============ -->
+<section class="section section--bordered">
+  <div class="container">
+    <div class="section-header"><p class="subheading">Our Edge</p><h2 class="h2">Why Raj Singh</h2></div>
+    <div class="multi-column"><div class="feature-card reveal"><span class="feature-card__number">01</span><h3 class="h4">Artisanal Heritage</h3><p>Decades of leather-working expertise and master-level handcrafting, ensuring every stitch is executed with absolute precision.</p></div><div class="feature-card reveal"><span class="feature-card__number">02</span><h3 class="h4">Premium Materials</h3><p>Crafted exclusively with ethically sourced, full-grain Italian leathers that mold to your feet and age beautifully over time.</p></div><div class="feature-card reveal"><span class="feature-card__number">03</span><h3 class="h4">Direct-to-Consumer Value</h3><p>By cutting out all distributors, retail markups, and middleman fees, we deliver ₹15,000-grade luxury directly to you for ₹5,000.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ COLLECTION LIST ============ -->
+<section class="collection-bento collection-bento--four section--bordered" style="--bento-radius: 20px;">
+  <div class="collection-bento__inner">
+    <header class="collection-bento__header">
+      <div class="collection-bento__titles"><p class="collection-bento__eyebrow">Categories</p><h2 class="collection-bento__heading">Shop by style</h2></div>
+      <a class="collection-bento__view-all" href="collection.html">View all</a>
+    </header>
+    <div class="collection-bento__grid">
+        <a class="collection-bento__tile reveal" href="collection.html" style="--bento-focal: 50% 65%;"><span class="collection-bento__media"><img src="images/cat-laceups.jpg" alt="Lace Ups" loading="lazy"></span><span class="collection-bento__number" aria-hidden="true">01</span><span class="collection-bento__label"><span class="collection-bento__label-text">Lace Ups</span><span class="collection-bento__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+        <a class="collection-bento__tile reveal" href="collection.html" style="--bento-focal: 50% 55%;"><span class="collection-bento__media"><img src="images/cat-monk.jpg" alt="Monk Straps" loading="lazy"></span><span class="collection-bento__number" aria-hidden="true">02</span><span class="collection-bento__label"><span class="collection-bento__label-text">Monk Straps</span><span class="collection-bento__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+        <a class="collection-bento__tile reveal" href="collection.html" style="--bento-focal: 45% 50%;"><span class="collection-bento__media"><img src="images/boot-alon-1.jpg" alt="Boots" loading="lazy"></span><span class="collection-bento__number" aria-hidden="true">03</span><span class="collection-bento__label"><span class="collection-bento__label-text">Boots</span><span class="collection-bento__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+        <a class="collection-bento__tile reveal" href="collection.html" style="--bento-focal: 50% 55%;"><span class="collection-bento__media"><img src="images/loafer-penny-1.jpg" alt="Loafers" loading="lazy"></span><span class="collection-bento__number" aria-hidden="true">04</span><span class="collection-bento__label"><span class="collection-bento__label-text">Loafers</span><span class="collection-bento__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED COLLECTIONS: LOAFERS ============ -->
+
+<section class="section section--bordered">
+  <div class="container" data-carousel>
+    <div class="collection-head">
+      <h2 class="h2">Loafers</h2>
+      <a class="pill-link" href="collection.html">View all</a>
+    </div>
+    <div class="product-carousel-wrap">
+      <div class="product-carousel">
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-26%</span>
+    <a class="product-card__media" href="product.html"><img src="images/loafer-penny-1.jpg" alt="Refined Elegance: Premium Penny Loafers Shoes for the Modern Gentleman" loading="lazy"><img src="images/loafer-penny-2.jpg" alt="" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"></div><div class="swatches"><span class="swatch" style="background:#7a4a1f"></span><span class="swatch" style="background:#111"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Refined Elegance: Premium Penny Loafers Shoes for the Modern Gentleman">Refined Elegance: Premium Penny Loafers Shoes for the Modern Gentleman</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.00</span><s>Rs. 7,499.00</s></div><span class="product-card__save">Save Rs. 2,000</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Refined Elegance: Premium Penny Loafers Shoes for the Modern Gentleman" data-price="5499" data-img="images/loafer-penny-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-44%</span>
+    <a class="product-card__media" href="product.html"><img src="images/loafer-valentino-burg-1.jpg" alt="Valentino | Heritage Penny Loafer – Burgundy Brown Smooth Abraded Leather" loading="lazy"><img src="images/loafer-valentino-burg-2.jpg" alt="" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"><span class="stars">★</span>4.7</div><div class="swatches"><span class="swatch" style="background:#5b2a22"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Valentino | Heritage Penny Loafer – Burgundy Brown Smooth Abraded Leather">Valentino | Heritage Penny Loafer – Burgundy Brown Smooth Abraded Leather</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.50</span><s>Rs. 9,999.00</s></div><span class="product-card__save">Save Rs. 4,499.50</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Valentino | Heritage Penny Loafer – Burgundy Brown Smooth Abraded Leather" data-price="5499.5" data-img="images/loafer-valentino-burg-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-44%</span>
+    <a class="product-card__media" href="product.html"><img src="images/loafer-valentino-black-1.jpg" alt="Valentino | Heritage Penny Loafer – Black Smooth Abraded Leather" loading="lazy"><img src="images/loafer-valentino-black-2.jpg" alt="" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"></div><div class="swatches"><span class="swatch" style="background:#111"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Valentino | Heritage Penny Loafer – Black Smooth Abraded Leather">Valentino | Heritage Penny Loafer – Black Smooth Abraded Leather</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.50</span><s>Rs. 9,999.00</s></div><span class="product-card__save">Save Rs. 4,499.50</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Valentino | Heritage Penny Loafer – Black Smooth Abraded Leather" data-price="5499.5" data-img="images/loafer-valentino-black-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-44%</span>
+    <a class="product-card__media" href="product.html"><img src="images/loafer-valentino-brown-1.jpg" alt="Valentino | Heritage Penny Loafer – Brown Smooth Leather" loading="lazy"><img src="images/loafer-valentino-brown-2.jpg" alt="" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"><span class="stars">★</span>4.9</div><div class="swatches"><span class="swatch" style="background:#8a4b1c"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Valentino | Heritage Penny Loafer – Brown Smooth Leather">Valentino | Heritage Penny Loafer – Brown Smooth Leather</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.50</span><s>Rs. 9,999.00</s></div><span class="product-card__save">Save Rs. 4,499.50</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Valentino | Heritage Penny Loafer – Brown Smooth Leather" data-price="5499.5" data-img="images/loafer-valentino-brown-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-44%</span>
+    <a class="product-card__media" href="product.html"><img src="images/loafer-strider-sand-1.jpg" alt="Strider | Penny Loafer – Sand Suede with Leather Sole" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"><span class="stars">★</span>4.0</div><div class="swatches"><span class="swatch" style="background:#c8a97e"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Strider | Penny Loafer – Sand Suede with Leather Sole">Strider | Penny Loafer – Sand Suede with Leather Sole</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.50</span><s>Rs. 9,999.00</s></div><span class="product-card__save">Save Rs. 4,499.50</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Strider | Penny Loafer – Sand Suede with Leather Sole" data-price="5499.5" data-img="images/loafer-strider-sand-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-44%</span>
+    <a class="product-card__media" href="product.html"><img src="images/loafer-strider-dark-1.jpg" alt="Strider | Penny Loafer – Dark Brown Suede with Leather Sole" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"></div><div class="swatches"><span class="swatch" style="background:#3e2618"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Strider | Penny Loafer – Dark Brown Suede with Leather Sole">Strider | Penny Loafer – Dark Brown Suede with Leather Sole</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.50</span><s>Rs. 9,999.00</s></div><span class="product-card__save">Save Rs. 4,499.50</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Strider | Penny Loafer – Dark Brown Suede with Leather Sole" data-price="5499.5" data-img="images/loafer-strider-dark-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-44%</span>
+    <a class="product-card__media" href="product.html"><img src="images/loafer-milano-tobacco-1.jpg" alt="Milano | Tobacco Brown Suede College Loafer with Horsebit" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"></div><div class="swatches"><span class="swatch" style="background:#6b4423"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Milano | Tobacco Brown Suede College Loafer with Horsebit">Milano | Tobacco Brown Suede College Loafer with Horsebit</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.50</span><s>Rs. 9,999.00</s></div><span class="product-card__save">Save Rs. 4,499.50</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Milano | Tobacco Brown Suede College Loafer with Horsebit" data-price="5499.5" data-img="images/loafer-milano-tobacco-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+<article class="product-card product-card--bar">
+  <div class="product-card__figure">
+    <span class="product-card__discount">-44%</span>
+    <a class="product-card__media" href="product.html"><img src="images/loafer-milano-brown-1.jpg" alt="Milano | Brown Suede College Loafer with Horsebit" loading="lazy"></a>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__meta"><div class="rating"></div><div class="swatches"><span class="swatch" style="background:#5a3a22"></span></div></div>
+    <a class="product-card__title" href="product.html" title="Milano | Brown Suede College Loafer with Horsebit">Milano | Brown Suede College Loafer with Horsebit</a>
+  </div>
+  <div class="product-card__bar">
+    <div class="product-card__bar-price"><div class="price"><span>Rs. 5,499.50</span><s>Rs. 9,999.00</s></div><span class="product-card__save">Save Rs. 4,499.50</span></div>
+    <button class="product-card__arrow" aria-label="Choose options" data-add data-title="Milano | Brown Suede College Loafer with Horsebit" data-price="5499.5" data-img="images/loafer-milano-brown-1.jpg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</article>
+      </div>
+      <button class="round-btn" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2 4 6l4 4"/></svg></button>
+      <button class="round-btn" data-dir="1" aria-label="Next"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 2 4 4-4 4"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCT (redesign: rail gallery · rating-first · colour + size · trust row) ============ -->
+<section class="section section--bordered fp-section">
+  <div class="container">
+    <div class="fp" data-fp>
+      <div class="gallery fp__gallery">
+        <div class="gallery__main fp__stage">
+          <img src="images/boot-chelsea-1.jpg" alt="Wholecut Chelsea boots in black full-grain leather">
+          <span class="fp__tag">Bestseller · Wedding edit</span>
+          <span class="fp__count"><b data-fp-index>01</b> / 06</span>
+        </div>
+        <div class="gallery__thumbs fp__rail" role="group" aria-label="Product images"><button class="is-active" aria-label="Image 1"><img src="images/boot-chelsea-1.jpg" alt=""></button><button aria-label="Image 2"><img src="images/boot-chelsea-2.jpg" alt=""></button><button aria-label="Image 3"><img src="images/boot-chelsea-3.jpg" alt=""></button><button aria-label="Image 4"><img src="images/boot-chelsea-4.jpg" alt=""></button><button aria-label="Image 5"><img src="images/boot-chelsea-5.jpg" alt=""></button><button aria-label="Image 6"><img src="images/boot-chelsea-6.jpg" alt=""></button></div>
+      </div>
+
+      <div class="fp__panel">
+        <p class="fp__eyebrow"><span>The Featured Pair</span><a href="product.html#reviews" class="fp__rating" aria-label="Rated 4.5 out of 5 from 75 reviews"><span class="stars">★★★★<span style="opacity:.25">★</span></span>4.5 <em>· 75 reviews</em></a></p>
+
+        <h3 class="fp__title"><a href="product.html">The Wholecut Chelsea</a></h3>
+        <p class="fp__sub">Handcrafted formal &amp; wedding boot — one seamless piece of full-grain leather, Blake-stitched and built to be resoled.</p>
+
+        <div class="fp__price">
+          <span class="fp__now">Rs. 5,499</span>
+          <s>Rs. 9,999</s>
+          <span class="fp__save">Save 45%</span>
+          <small>Inclusive of all taxes</small>
+        </div>
+
+        <div class="fp__opt">
+          <p class="fp__label">Colour <b data-fp-colour>Black</b></p>
+          <div class="fp__swatches">
+            <button class="fp__swatch is-selected" data-thumb="0" aria-label="Black" aria-pressed="true"><img src="images/boot-chelsea-1.jpg" alt=""><span>Black</span></button>
+            <button class="fp__swatch" data-thumb="4" aria-label="Dark Brown" aria-pressed="false"><img src="images/boot-chelsea-5.jpg" alt=""><span>Dark Brown</span></button>
+          </div>
+        </div>
+
+        <div class="fp__opt" data-fp-sizes>
+          <p class="fp__label">Size <b id="size-label">Select UK size</b><a href="product.html#size-guide">Size guide</a></p>
+          <div class="pills fp__pills"><button class="pill">6</button><button class="pill">7</button><button class="pill">8</button><button class="pill">9</button><button class="pill">10</button><button class="pill is-soldout" aria-disabled="true" title="Sold out">11</button></div>
+          <p class="fp__hint" data-fp-hint role="alert" hidden>Please choose your size first.</p>
+          <p class="scarcity__pill" id="stock-alert" hidden></p>
+        </div>
+
+        <div class="fp__cta">
+          <button class="btn btn-atc btn--block" data-add data-title="Premium Wholecut Chelsea Boots | Handcrafted Men&#x27;s Formal Wedding Footwear" data-price="5499" data-img="images/boot-chelsea-1.jpg" data-variant="Black">Add to cart</button>
+          <a class="btn btn-buy btn--block" href="product.html" data-fp-buy>Buy it now</a>
+        </div>
+
+        <ul class="fp__trust" role="list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v1M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg><span><b>Handcrafted</b>in Agra</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><span><b>Free delivery</b>in 7 days</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg><span><b>15-day</b>easy exchange</span></li>
+        </ul>
+
+        <a class="fp__more" href="product.html"><span>View full product details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MULTIPLE MEDIA WITH TEXT: CRAFTED STEPS (overlap, rotation -4 / 4) ============ -->
+<section class="section section--bordered">
+  <div class="container">
+    <div class="media-text">
+      <div class="media-text__mobile-header"><p class="h6">Raj Singh's</p><p class="h3">Crafted Steps</p></div>
+      <div class="media-text__images">
+        <div class="media-frame" style="--media-rotate:-4deg"><img src="images/crafted-1.jpg" alt="" loading="lazy"></div>
+        <div class="media-frame" style="--media-rotate:4deg"><img src="images/crafted-2.jpg" alt="" loading="lazy"></div>
+      </div>
+      <div class="media-text__content reveal">
+        <div class="media-text__desktop-header"><p class="h6">Raj Singh's</p><p class="h3">Crafted Steps</p></div>
+        <p>Raj Singh's - Elevating your style with our exquisite leather shoe collection. Crafted with precision and passion, our shoes offer unparalleled comfort and sophistication. Explore a spectrum of colors and textures, each pair a testament to timeless elegance. Step into Raj Singh's and step up your style game.</p>
+        <a class="btn" href="collection.html">Explore Collection</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOP THE LOOK: SHOP THE GLAMOUR (editorial lookbook spread) ============ -->
+<section class="section section--bordered stl" data-stl>
+  <div class="container">
+    <div class="stl__grid">
+      <figure class="stl__scene reveal">
+        <div class="stl__frame">
+          <img class="stl__photo is-active" data-look="black" src="images/boot-chelsea-3.jpg" alt="Black wholecut Chelsea boots worn with charcoal trousers" loading="lazy" width="736" height="909">
+          <img class="stl__photo" data-look="brown" src="images/boot-chelsea-6.jpg" alt="Brown wholecut Chelsea boots worn with charcoal trousers" loading="lazy" width="736" height="1104">
+          <button class="stl__spot" type="button" style="--x:36%;--y:55%" aria-expanded="false" aria-controls="stl-tag" data-stl-spot><span class="visually-hidden">Show the boot in this look</span></button>
+          <div class="stl__tag" id="stl-tag" style="--x:36%;--y:55%" data-stl-tag>
+            <img src="images/boot-chelsea-1.jpg" alt="" width="56" height="56" data-stl-thumb>
+            <span class="stl__tag-body">
+              <span class="stl__tag-name">Wholecut Chelsea</span>
+              <span class="stl__tag-price">Rs. 5,499 <s>Rs. 9,999</s></span>
+            </span>
+            <a class="stl__tag-go" href="product.html" aria-label="View Wholecut Chelsea Boot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+        <figcaption class="stl__caption"><span>Nº 01</span>Evening formal &mdash; worn with charcoal wool trousers</figcaption>
+      </figure>
+
+      <div class="stl__panel reveal">
+        <p class="stl__eyebrow">The Look &middot; Nº 01</p>
+        <h2 class="stl__heading">Shop the Glamour</h2>
+        <p class="stl__lede">One boot from the pheras to the last dance. A single piece of full-grain calf, hand-lasted with no seams to break the shine.</p>
+
+        <div class="stl__product">
+          <a class="stl__thumb" href="product.html"><img src="images/boot-chelsea-1.jpg" alt="" width="96" height="96" loading="lazy" data-stl-thumb></a>
+          <div class="stl__meta">
+            <p class="stl__vendor">Raj Singh's</p>
+            <a class="stl__name" href="product.html">Wholecut Chelsea Boot</a>
+            <p class="stl__sub">Handcrafted men's formal footwear</p>
+            <p class="stl__rating" aria-label="Rated 4.5 out of 5"><span class="stl__stars" style="--rating:4.5" aria-hidden="true"></span>4.5</p>
+          </div>
+        </div>
+
+        <div class="stl__price"><span class="stl__now">Rs. 5,499</span><s>Rs. 9,999</s><span class="stl__save">Save 45%</span></div>
+
+        <fieldset class="stl__colours">
+          <legend>Colour <span data-stl-colour>Black</span></legend>
+          <div class="stl__swatches">
+            <button class="stl__swatch is-selected" type="button" aria-pressed="true" aria-label="Black" data-look="black" data-thumb="images/boot-chelsea-1.jpg" data-x="36%" data-y="55%"><img src="images/boot-chelsea-1.jpg" alt="" width="44" height="44" loading="lazy"></button>
+            <button class="stl__swatch" type="button" aria-pressed="false" aria-label="Brown" data-look="brown" data-thumb="images/boot-chelsea-5.jpg" data-x="61%" data-y="81%"><img src="images/boot-chelsea-5.jpg" alt="" width="44" height="44" loading="lazy"></button>
+          </div>
+        </fieldset>
+
+        <div class="stl__cta">
+          <button class="btn stl__atc" type="button" data-add data-title="Premium Wholecut Chelsea Boots | Handcrafted Men&#x27;s Formal Wedding Footwear" data-price="5499" data-img="images/boot-chelsea-1.jpg" data-variant="Black"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Add to cart</button>
+          <a class="stl__more" href="product.html">View details<span class="stl__more-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+
+        <ul class="stl__trust" role="list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><span><b>Free delivery</b>in 7 days</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg><span><b>15-day</b>easy exchange</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Resoleable</b>built to last</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG POSTS: THE JOURNAL (staggered story cards, each ends in the pair it features) ============ -->
+<section class="section section--bordered journal" aria-labelledby="journal-heading">
+  <div class="container">
+    <header class="journal__masthead reveal">
+      <div>
+        <p class="journal__eyebrow">The Journal &middot; Vol. 01</p>
+        <h2 class="journal__heading" id="journal-heading">Stories from the last.</h2>
+      </div>
+      <a class="journal__all" href="#">All stories <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </header>
+
+    <ol class="journal__grid" role="list">
+      <li class="journal__story reveal">
+        <p class="journal__label"><span class="journal__no" aria-hidden="true">01</span><span>Occasion &middot; 6 min</span></p>
+        <article class="journal__card" style="--journal-focal: 50% 75%;">
+          <a class="journal__media" href="#" tabindex="-1" aria-hidden="true"><img src="images/blog-1.jpg" alt="" loading="lazy" width="800" height="800"></a>
+          <div class="journal__body">
+            <h3 class="journal__title"><a href="#">Upgrade your style with leather shoes for weddings &amp; formal wear</a></h3>
+            <p class="journal__excerpt">When it comes to celebrating life&#x27;s milestones, nothing completes your look quite like the perfect pair.</p>
+          </div>
+          <div class="journal__product">
+            <img src="images/formal-1.jpg" alt="" width="56" height="56" loading="lazy">
+            <span class="journal__product-text"><small>Worn in this story</small>Luxury Formal Boot<b>Rs. 5,499</b></span>
+            <a class="journal__shop" href="product.html" aria-label="Shop Luxury Formal Boot">Shop</a>
+          </div>
+        </article>
+      </li>
+      <li class="journal__story reveal">
+        <p class="journal__label"><span class="journal__no" aria-hidden="true">02</span><span>Care &middot; 8 min</span></p>
+        <article class="journal__card" style="--journal-focal: 50% 100%;">
+          <a class="journal__media" href="#" tabindex="-1" aria-hidden="true"><img src="images/blog-2.jpg" alt="" loading="lazy" width="800" height="800"></a>
+          <div class="journal__body">
+            <h3 class="journal__title"><a href="#">The leather shoe care guide: keep formal shoes perfect for every occasion</a></h3>
+            <p class="journal__excerpt">Leather shoes are a cornerstone of elegant fashion, especially for events that demand wedding footwear.</p>
+          </div>
+          <div class="journal__product">
+            <span class="journal__product-placeholder" aria-hidden="true">IMG</span>
+            <span class="journal__product-text"><small>Pairs with this guide</small>[CARE KIT PRODUCT]<b>[PRICE]</b></span>
+            <a class="journal__shop" href="#" aria-label="Shop [CARE KIT PRODUCT]">Shop</a>
+          </div>
+        </article>
+      </li>
+      <li class="journal__story reveal">
+        <p class="journal__label"><span class="journal__no" aria-hidden="true">03</span><span>Style &middot; 5 min</span></p>
+        <article class="journal__card">
+          <a class="journal__media" href="#" tabindex="-1" aria-hidden="true"><img src="images/blog-3.jpg" alt="" loading="lazy" width="736" height="736"></a>
+          <div class="journal__body">
+            <h3 class="journal__title"><a href="#">Chelsea boots: the one leather shoe for every occasion</a></h3>
+            <p class="journal__excerpt">A timeless icon in men&#x27;s footwear, blending style, versatility and elegance &mdash; from black tie to casual.</p>
+          </div>
+          <div class="journal__product">
+            <img src="images/boot-chelsea-1.jpg" alt="" width="56" height="56" loading="lazy">
+            <span class="journal__product-text"><small>Worn in this story</small>Wholecut Chelsea Boot<b>Rs. 5,499</b></span>
+            <a class="journal__shop" href="product.html" aria-label="Shop Wholecut Chelsea Boot">Shop</a>
+          </div>
+        </article>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ TEXT WITH ICONS (footer group) ============ -->
+<section class="section section--bordered" style="padding-block:64px">
+  <div class="container container--narrow"><div class="icons-row" id="icons-row"><div class="icon-card"><img src="images/icon-shipping.svg" alt=""><p class="h6">Free Shipping</p></div><div class="icon-card"><img src="images/icon-returns.svg" alt=""><p class="h6">Easy Returns</p></div><div class="icon-card"><img src="images/icon-quality.svg" alt=""><p class="h6">Quality Product</p></div><div class="icon-card"><img src="images/icon-secure.svg" alt=""><p class="h6">Secure payments</p></div></div><div class="icons-dots"><span class="is-active"></span><span></span><span></span><span></span></div></div>
+</section>
+
+<!-- ============ FOOTER (scheme-2) ============ -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__logo" href="index.html"><img src="images/logo-white.png" alt="Raj Singh's" width="200" height="200"></a>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/profile.php?id=61556582427627" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5V13h2.7v8h3.3Z"/></svg></a>
+          <a href="https://www.instagram.com/rajsinghs_official" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-card">
+        <p class="footer__heading">Categories</p>
+        <ul class="footer-links">
+          <li><a href="collection.html">All Products</a></li>
+          <li><a href="collection.html">Shoes</a></li>
+          <li><a href="collection.html">Bags</a></li>
+          <li><a href="collection.html">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-card">
+        <p class="footer__heading">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="#">About us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Return &amp; Refund Policy</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Billing Terms &amp; Conditions</a></li>
+          <li><a href="#">Track Your Order Here</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-card footer-contact">
+        <p class="footer__heading">Contact Us</p>
+        <p>📞 Call Us At - <a href="tel:+918755532123">+91 87555 32123</a> ( 9:00 Am - 5:00 Pm ) Monday to Friday</p>
+        <p>📧 Email Us At - <a href="mailto:support@rajsinghs.com">support@rajsinghs.com</a></p>
+        <p>🗺️ Office Address - Maharishi Puram, sikandra, 282007 Agra UP, India</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__locale"><button><img class="flag" src="images/flag-in.svg" alt=""> India (INR ₹) <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m2 4 4 4 4-4"/></svg></button><button>English <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m2 4 4 4 4-4"/></svg></button></div>
+      <div class="payments">
+<span class="pay-chip" title="PhonePe"><svg viewBox="0 0 80 24"><circle cx="11" cy="12" r="10" fill="#5f259f"/><text x="11" y="16" font-size="11" font-family="Arial" font-weight="700" fill="#fff" text-anchor="middle">पे</text><text x="25" y="16.5" font-size="11.5" font-family="Arial" font-weight="700" fill="#5f259f">PhonePe</text></svg></span>
+<span class="pay-chip" title="Google Pay"><svg viewBox="0 0 60 24"><text x="0" y="17" font-size="15" font-family="Arial" font-weight="700"><tspan fill="#4285f4">G</tspan></text><text x="14" y="17" font-size="14" font-family="Arial" fill="#5f6368">Pay</text></svg></span>
+<span class="pay-chip" title="Paytm"><svg viewBox="0 0 60 24"><text x="0" y="17" font-size="15" font-family="Arial" font-weight="700" fill="#002e6e">pay<tspan fill="#00baf2">tm</tspan></text></svg></span>
+<span class="pay-chip" title="UPI"><svg viewBox="0 0 44 24"><text x="0" y="17" font-size="14" font-style="italic" font-family="Arial" font-weight="700" fill="#097939">UPI</text><path d="M34 5l6 7-6 7" fill="#f47920"/></svg></span>
+<span class="pay-chip" title="Visa"><svg viewBox="0 0 50 24"><text x="0" y="18" font-size="17" font-style="italic" font-family="Arial" font-weight="900" fill="#1a1f71">VISA</text></svg></span>
+<span class="pay-chip" title="Mastercard"><svg viewBox="0 0 38 24"><circle cx="14" cy="12" r="9" fill="#eb001b"/><circle cx="24" cy="12" r="9" fill="#f79e1b" fill-opacity=".9"/></svg></span>
+</div>
+      <p class="footer__copy">© 2026 - Raj Singh's powered by M/S Raj Singh Enterprises</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/+918433083714?text=I%20need%20help!" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.7 6.5 1.7 7 0 12.7-5.7 12.7-12.7S23 3 16 3Zm0 23.2c-2.1 0-4.1-.6-5.8-1.7l-.4-.2-3.9 1.2 1.3-3.8-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5.1 9.8 10 5 16 5s10.9 4.8 10.9 10.8S22 26.2 16 26.2Zm6-8.1c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.8 5.1 2.9 1.1 3.4.9 4.1.8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z"/></svg></a>
+
+<!-- ============ NEWSLETTER POPUP (overlay-group: bottom-right card, index only, 5s delay) ============ -->
+<div class="popup" id="newsletter-popup" role="dialog" aria-label="Newsletter">
+  <div class="popup__card">
+    <button class="popup__close" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m5 5 14 14M19 5 5 19"/></svg></button>
+    <span class="popup__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="8" width="18" height="4"/><path d="M5 12v9h14v-9M12 8v13M12 8S10 3 7.5 4.5 9 8 12 8Zm0 0s2-5 4.5-3.5S15 8 12 8Z"/></svg></span>
+    <div class="popup__head">
+      <p class="popup__title">Your Feet Deserve Better</p>
+      <p class="popup__text">Exclusive flash sales for subscribers. VIP access to premium collections.</p>
+    </div>
+    <form><label class="visually-hidden" for="nl-email">E-mail</label><input id="nl-email" class="field" type="email" placeholder="E-mail" required><button class="btn">Get VIP Access</button></form>
+  </div>
+</div>
+<script src="main.js"></script>
+<script src="app.js"></script>
+<script src="hero-options.js"></script>
+</body>
+</html>
